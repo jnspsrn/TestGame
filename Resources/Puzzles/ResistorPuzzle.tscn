@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Resistor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Puzzles/ResistorPuzzle.gd" type="Script" id=3]
+
+[node name="ResistorPuzzle" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Resistor" parent="." index="0" instance=ExtResource( 2 )]
+position = Vector2( 166.981, 62.5236 )
+
+[node name="NeededValueLabel" type="Label" parent="." index="1"]
+margin_left = 131.35
+margin_top = 119.74
+margin_right = 198.35
+margin_bottom = 133.74
+text = "88K Ohms"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 6.89668
+margin_top = 120.366
+margin_right = 115.897
+margin_bottom = 134.366
+text = "Assign the value:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 73.8983
+margin_top = 150.846
+margin_right = 133.898
+margin_bottom = 164.846
+text = "Try again!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SubmitButton" type="Button" parent="." index="4"]
+margin_left = 7.79515
+margin_top = 148.196
+margin_right = 64.7952
+margin_bottom = 168.196
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningTimer" type="Timer" parent="." index="5"]
+one_shot = true
+[connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]

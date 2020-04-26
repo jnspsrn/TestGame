@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Videos/big-buck-bunny_trailer.webm" type="VideoStream" id=1]
+[ext_resource path="res://Resources/Videos/Trailer.gd" type="Script" id=2]
+
+[node name="Trailer" type="VideoPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tahp Button" type="Button" parent="."]
+margin_left = 860.0
+margin_top = 533.0
+margin_right = 1003.0
+margin_bottom = 573.0
+text = "Tahp Tahp"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="finished" from="." to="." method="_on_Trailer_finished"]
+[connection signal="pressed" from="Tahp Button" to="." method="_on_Tahp_Button_pressed"]
