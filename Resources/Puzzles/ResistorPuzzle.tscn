@@ -7,10 +7,13 @@
 [node name="ResistorPuzzle" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="Resistor" parent="." index="0" instance=ExtResource( 2 )]
+[node name="Background" parent="." index="0"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="Resistor" parent="." index="1" instance=ExtResource( 2 )]
 position = Vector2( 166.981, 62.5236 )
 
-[node name="NeededValueLabel" type="Label" parent="." index="1"]
+[node name="NeededValueLabel" type="Label" parent="." index="2"]
 margin_left = 131.35
 margin_top = 119.74
 margin_right = 198.35
@@ -20,7 +23,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InstructionLabel" type="Label" parent="." index="2"]
+[node name="InstructionLabel" type="Label" parent="." index="3"]
 margin_left = 6.89668
 margin_top = 120.366
 margin_right = 115.897
@@ -31,7 +34,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WarningLabel" type="Label" parent="." index="3"]
+[node name="WarningLabel" type="Label" parent="." index="4"]
 margin_left = 73.8983
 margin_top = 150.846
 margin_right = 133.898
@@ -41,7 +44,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SubmitButton" type="Button" parent="." index="4"]
+[node name="SubmitButton" type="Button" parent="." index="5"]
 margin_left = 7.79515
 margin_top = 148.196
 margin_right = 64.7952
@@ -51,6 +54,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WarningTimer" type="Timer" parent="." index="5"]
+[node name="WarningTimer" type="Timer" parent="." index="6"]
 one_shot = true
 [connection signal="pressed" from="SubmitButton" to="." method="_on_SubmitButton_pressed"]

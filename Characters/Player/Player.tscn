@@ -202,8 +202,12 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=23]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"MainInstances",
+]]
 position = Vector2( 0, -2 )
+z_index = 1
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -212,7 +216,7 @@ scale = Vector2( 0.726563, 0.695313 )
 texture = ExtResource( 1 )
 vframes = 4
 hframes = 8
-frame = 10
+frame = 16
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
@@ -234,3 +238,5 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 23 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
+
+[node name="PlayerCameraFollow" type="RemoteTransform2D" parent="."]

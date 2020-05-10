@@ -2,25 +2,44 @@ extends InteractableObject
 class_name PuzzleObject
 
 export(String, FILE, "*.tscn") var puzzlePath = ""
+export(bool) var puzzle_solved
 
-var is_window_open = false
-var root
+var is_puzzle_open = false
+var puzzle
+
+func _ready():
+	if ProgressManager.is_new_game:
+		set_to_default()
+	elif GameManager.state != GameManager.GAME_STATE.LOADING:
+		SaveAndLoad.load_puzzle(self, get_level())
 
 func interaction():
-	root = get_tree().get_root().get_node(".")
-	if is_window_open == false:
-		is_window_open = true
+	if is_puzzle_open == false:
+		is_puzzle_open = true
 		var PuzzlePath = load(puzzlePath)
-		var puzzle = PuzzlePath.instance()
-		var Window = load("res://Systems/Window System/Window.tscn")
-		var window = Window.instance()
-		root.add_child(window)
-		MainInstances.Player.movement_disabled = true
-		root.get_node("Window").add_child(puzzle)
-	elif is_window_open == true:
-		is_window_open = false
-		call_deferred("close_window")
-		MainInstances.Player.movement_disabled = false
+		puzzle = PuzzlePath.instance()
+		self.add_child(puzzle)
+		GameManager.Player.movement_disabled = true
+		GameManager.WorldCamera.current = false
+		puzzle.puzzleCamera.current = true
+	elif is_puzzle_open == true:
+		is_puzzle_open = false
+		GameManager.Player.movement_disabled = false
+		GameManager.WorldCamera.current = true
+		puzzle.queue_free()
 
-func close_window():
-	root.get_node("Window").queue_free()
+func save_puzzle_data():
+	return { 
+		"filename" : filename,
+		"parent" : get_parent().get_path(),
+		"puzzle_solved" : puzzle_solved
+	}
+
+func set_to_default():
+	puzzle_solved = false
+
+func set_load_puzzle_data():
+	SaveAndLoad.load_puzzle(self, get_level())
+
+func get_level():
+	return GameManager.CurrentLevel.name

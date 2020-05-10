@@ -1,6 +1,5 @@
 extends KinematicBody2D
-
-var MainInstances = ResourceLoader.MainInstances
+class_name Player
 
 const ACCELERATION = 800
 const MAX_SPEED = 128
@@ -11,12 +10,16 @@ var movement_disabled = false
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var cameraFollow = $PlayerCameraFollow
 
 signal interact_with_object #emitted when player interacts with an InteractableObject
+# warning-ignore:unused_signal
+signal hit_door(door)
 
 func _ready():
-	MainInstances.Player = self
+	GameManager.Player = self
 	animationTree.active = true
+	call_deferred("assign_world_camera")
 
 func _physics_process(delta):
 	interact()
@@ -44,3 +47,14 @@ func move(delta):
 func interact():
 	if Input.is_action_just_pressed("Interact"):
 		emit_signal("interact_with_object")
+
+func save():
+	return {
+		"filename": filename,
+		"parent": get_parent().get_path(),
+		"position_x" : position.x,
+		"position_y" : position.y,
+	}
+
+func assign_world_camera():
+	cameraFollow.remote_path = GameManager.WorldCamera.get_path()

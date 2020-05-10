@@ -2,5 +2,16 @@
 
 [ext_resource path="res://Resources/Puzzles/Puzzle.gd" type="Script" id=1]
 
-[node name="Puzzle" type="Node"]
+[node name="Puzzle" type="CanvasLayer"]
+layer = 2
 script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PuzzleCamera" type="Camera2D" parent="."]
+offset = Vector2( 160, 90 )

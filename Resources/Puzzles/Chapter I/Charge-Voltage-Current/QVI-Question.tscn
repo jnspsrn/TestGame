@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter I/Charge-Voltage-Current/QVI-Question.gd" type="Script" id=2]
+
+[node name="QVI-Question" groups=[
+"Persists",
+] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+puzzle_id = "001"
+
+[node name="Question" type="Label" parent="." index="0"]
+margin_left = 68.2406
+margin_top = 38.4033
+margin_right = 267.241
+margin_bottom = 52.4033
+text = "Charge is bipolar. True or false?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="True" type="Button" parent="." index="1"]
+margin_left = 109.071
+margin_top = 104.638
+margin_right = 152.071
+margin_bottom = 124.638
+text = "True"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="False" type="Button" parent="." index="2"]
+margin_left = 174.566
+margin_top = 104.978
+margin_right = 220.566
+margin_bottom = 124.978
+text = "False"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="True" to="." method="_on_True_pressed"]
+[connection signal="pressed" from="False" to="." method="_on_False_pressed"]
