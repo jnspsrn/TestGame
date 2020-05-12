@@ -7,7 +7,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 3 )
 
-[node name="DoorPanel" instance=ExtResource( 1 )]
+[node name="DoorPanel" groups=[
+"DoorPanel",
+] instance=ExtResource( 1 )]
 position = Vector2( 0, 18 )
 script = ExtResource( 3 )
 

@@ -84,7 +84,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 22, 4 )
+extents = Vector2( 22, 9 )
 
 [node name="FrontDoor" type="Node2D"]
 script = ExtResource( 2 )
@@ -93,7 +93,6 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 4
-frame = 10
 
 [node name="Barrier" type="StaticBody2D" parent="."]
 collision_mask = 2
@@ -110,15 +109,12 @@ anims/Error = SubResource( 3 )
 anims/Open = SubResource( 6 )
 
 [node name="Sensor" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="Collider" type="CollisionShape2D" parent="Sensor"]
 modulate = Color( 0.113725, 0.654902, 0, 1 )
-position = Vector2( 0, 28 )
-shape = SubResource( 7 )
-
-[node name="Collider2" type="CollisionShape2D" parent="Sensor"]
-modulate = Color( 0.113725, 0.654902, 0, 1 )
-position = Vector2( 0, 15 )
+position = Vector2( 0, 23 )
 shape = SubResource( 7 )
 
 [node name="DoorPanel" parent="." instance=ExtResource( 3 )]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Levels/CommandCenter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter I/ch01_links/cc_ss_ch01.tres" type="Resource" id=2]
+[ext_resource path="res://Levels/Chapter I/CC_CH01.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Chapter I/PowerControlDoorPanel.gd" type="Script" id=4]
+[ext_resource path="res://Levels/Chapter I/Events/StartDialogue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Chapter I/DataCenterDoorPanel.gd" type="Script" id=6]
+[ext_resource path="res://Levels/Chapter I/ShipSquareDoorPanel.gd" type="Script" id=7]
+[ext_resource path="res://Levels/Chapter I/Events/evnt_01.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Chapter I/EntranceDoorSidePanel.gd" type="Script" id=9]
+
+[node name="CC_CH01" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="DoorPanel" parent="ShipSquareDoor" index="4"]
+script = ExtResource( 7 )
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="DoorPanel" parent="PowerControlDoor" index="4"]
+script = ExtResource( 4 )
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="Waypoint" parent="." index="3"]
+connection = ExtResource( 2 )
+new_level_path = "res://Levels/Chapter I/SS_CH01.tscn"
+
+[node name="SideDoorPanel" parent="EntranceDoor" index="4"]
+script = ExtResource( 9 )
+puzzlePath = "res://Resources/Puzzles/Chapter I/Charge-Voltage-Current/QVI-Question.tscn"
+
+[node name="DoorPanel" parent="DataCenterDoor" index="4"]
+script = ExtResource( 6 )
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="Events" type="Node" parent="." index="7"]
+
+[node name="evnt_01" parent="Events" index="0" instance=ExtResource( 8 )]
+
+[node name="StartDialogue" parent="Events" index="1" instance=ExtResource( 5 )]
+
+[editable path="ShipTileset"]
+
+[editable path="ShipSquareDoor/DoorPanel"]
+
+[editable path="PowerControlDoor"]
+
+[editable path="PowerController"]
+
+[editable path="EntranceDoor"]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/EngineRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter I/ER_CH01.gd" type="Script" id=2]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Chapter I/ch01_links/er_ss02_ch01.tres" type="Resource" id=4]
+
+[node name="ER_CH01" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="EngineControlOne" parent="." index="3" groups=[
+"InteractableObject",
+]]
+collision_layer = 0
+collision_mask = 2
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="EngineControlTwo" parent="." index="4" groups=[
+"InteractableObject",
+]]
+collision_layer = 0
+collision_mask = 2
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="EngineControlThree" parent="." index="5" groups=[
+"InteractableObject",
+]]
+collision_layer = 0
+collision_mask = 2
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="EngineControlFour" parent="." index="6" groups=[
+"InteractableObject",
+]]
+collision_layer = 0
+collision_mask = 2
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SS02_Waypoint" parent="." index="7" instance=ExtResource( 3 )]
+position = Vector2( 264, 263 )
+rotation = 1.5708
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/SS02_CH01.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="EntranceDoor"]

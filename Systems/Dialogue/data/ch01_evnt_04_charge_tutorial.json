@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"This is the topic section" },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"This contains information about charge" },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"Read through the text" },
+    "004" : {"name":"Robot", "expression": "neutral", "text":"If you have found the info, just press back." }
+}

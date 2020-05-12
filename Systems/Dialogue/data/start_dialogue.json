@@ -1,0 +1,13 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"What happened????!" },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"It seems we crashed onto a planet." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"Commander! The ship is out of power!" },
+    "005" : {"name":"CrewTwo", "expression": "neutral", "text":"Commander! The doors are malfunctioning. Some of the crew are trapped inside rooms." },
+    "006" : {"name":"Commander", "expression": "neutral", "text":"This is bad. We need to restore power as soon as possible and repair the ship. But first, we need to rescue those who are trapped." },
+    "007" : {"name":"CrewOne", "expression": "neutral", "text":"Commander!, the head engineer has been knocked out by the impact. Only he knows how to open the doors in manual mode." },
+    "008" : {"name":"Robot", "expression": "neutral", "text":"Maybe Player here can help. He is the head engineer's apprentice after all."  },
+    "009" : {"name":"Commander", "expression": "neutral", "text":"Player! We need you to rescue the others." },
+    "010" : {"name":"Player", "expression": "neutral", "text":"I don't think I am capable en-" },
+    "011" : {"name":"Robot", "expression": "neutral", "text":"Don't you worry. I will be aiding you." },
+    "012" : {"name":"Commander", "expression": "neutral", "text":"We're counting on you." }
+}

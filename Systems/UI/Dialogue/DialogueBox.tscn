@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Systems/UI/Dialogue/DialogueBox.gd" type="Script" id=1]
+[ext_resource path="res://Systems/Dialogue/DialoguePlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Fonts/testFont.tres" type="DynamicFont" id=3]
+
+[node name="DialogueBox" type="Control"]
+anchor_top = 0.356
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.0800018
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Portrait" type="TextureRect" parent="."]
+anchor_left = 0.896
+anchor_top = 0.283
+anchor_right = 0.896
+anchor_bottom = 0.283
+margin_left = -60.72
+margin_top = -56.828
+margin_right = 29.28
+margin_bottom = 181.172
+rect_scale = Vector2( 1.07637, 0.967545 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_top = 55.0
+margin_right = 320.0
+margin_bottom = 117.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Columns" type="HBoxContainer" parent="Panel"]
+anchor_left = 0.012
+anchor_top = 0.067
+anchor_right = 0.985
+anchor_bottom = 1.0
+margin_left = 0.16
+margin_top = -0.02
+margin_right = 1.79999
+margin_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.994134, 0.896146 )
+size_flags_horizontal = 7
+size_flags_vertical = 3
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Panel/Columns"]
+margin_right = 24.0
+margin_bottom = 56.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 3 )
+text = "Name"
+
+[node name="Text" type="Label" parent="Panel/Columns"]
+margin_left = 28.0
+margin_right = 273.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 3 )
+text = "Dialogue"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="NextButton" type="Button" parent="Panel/Columns"]
+margin_left = 277.0
+margin_right = 313.0
+margin_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Next"
+
+[node name="DoneButton" type="Button" parent="Panel/Columns"]
+visible = false
+margin_left = 273.0
+margin_right = 313.0
+margin_bottom = 14.0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Done"
+
+[node name="DialoguePlayer" parent="." instance=ExtResource( 2 )]
+[connection signal="pressed" from="Panel/Columns/NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="Panel/Columns/DoneButton" to="." method="_on_DoneButton_pressed"]
+[connection signal="finished" from="DialoguePlayer" to="." method="_on_DialoguePlayer_finished"]

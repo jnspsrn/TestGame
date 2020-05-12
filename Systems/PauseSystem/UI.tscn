@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Systems/PauseSystem/Pause.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Systems/PauseSystem/UI.gd" type="Script" id=2]
+[ext_resource path="res://Systems/UI/Dialogue/DialogueBox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Systems/Database/Database.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Fonts/testFont.tres" type="DynamicFont" id=5]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -10,10 +13,14 @@ script = ExtResource( 2 )
 visible = false
 
 [node name="CurrentLevelLabel" type="Label" parent="."]
-margin_left = 242.0
-margin_top = 11.0
-margin_right = 282.0
-margin_bottom = 25.0
+anchor_left = 0.825
+anchor_top = 0.892
+anchor_right = 0.825
+anchor_bottom = 0.892
+margin_left = -10.0
+margin_top = -3.56
+margin_right = 30.0
+margin_bottom = 10.44
 rect_scale = Vector2( 0.5, 0.5 )
 align = 1
 valign = 1
@@ -21,3 +28,29 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Dialogue" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="DialogueBox" parent="Dialogue" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Database" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="DatabaseButton" type="Button" parent="."]
+margin_left = 247.0
+margin_top = 8.0
+margin_right = 307.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 5 )
+text = "Database"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Database/ExitDatabase" to="." method="_on_ExitDatabase_pressed"]
+[connection signal="pressed" from="DatabaseButton" to="." method="_on_DatabaseButton_pressed"]
+
+[editable path="Dialogue/DialogueBox"]
+
+[editable path="Database"]

@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Objects/Ship/EventPrompt.gd" type="Script" id=1]
 
-[node name="EventPrompt" type="Area2D"]
+[node name="EventPrompt" type="Area2D" groups=[
+"EventPrompt",
+]]
 script = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-[connection signal="body_entered" from="." to="." method="_on_EventPrompt_body_entered"]
+[node name="Collider" type="CollisionShape2D" parent="."]

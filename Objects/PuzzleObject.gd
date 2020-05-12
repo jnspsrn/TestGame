@@ -7,11 +7,21 @@ export(bool) var puzzle_solved
 var is_puzzle_open = false
 var puzzle
 
+signal closed_puzzle
+signal is_solved(object)
+
 func _ready():
 	if ProgressManager.is_new_game:
 		set_to_default()
 	elif GameManager.state != GameManager.GAME_STATE.LOADING:
 		SaveAndLoad.load_puzzle(self, get_level())
+
+func update_puzzle(update):
+	puzzle_solved = update
+	if puzzle_solved:
+		print("Updated puzzle to: ", puzzle_solved)
+		SaveAndLoad.save_puzzle(self, get_level())
+		emit_signal("is_solved", self)
 
 func interaction():
 	if is_puzzle_open == false:
@@ -26,20 +36,28 @@ func interaction():
 		is_puzzle_open = false
 		GameManager.Player.movement_disabled = false
 		GameManager.WorldCamera.current = true
-		puzzle.queue_free()
+		emit_signal("closed_puzzle")
+		set_interactable()
 
 func save_puzzle_data():
 	return { 
 		"filename" : filename,
 		"parent" : get_parent().get_path(),
-		"puzzle_solved" : puzzle_solved
+		"puzzle_solved" : puzzle_solved,
+		"interactable" : interactable
 	}
 
 func set_to_default():
 	puzzle_solved = false
+	interactable = true
 
 func set_load_puzzle_data():
 	SaveAndLoad.load_puzzle(self, get_level())
 
 func get_level():
 	return GameManager.CurrentLevel.name
+
+func set_interactable():
+	if puzzle_solved:
+		interactable = false
+		SaveAndLoad.save_puzzle(self, get_level())

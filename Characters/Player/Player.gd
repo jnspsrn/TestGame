@@ -7,14 +7,14 @@ const FRICTION = 750
 
 var velocity = Vector2.ZERO
 var movement_disabled = false
+var interactableObjects
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var cameraFollow = $PlayerCameraFollow
-
-signal interact_with_object #emitted when player interacts with an InteractableObject
 # warning-ignore:unused_signal
 signal hit_door(door)
+signal interacted_with_object
 
 func _ready():
 	GameManager.Player = self
@@ -46,7 +46,7 @@ func move(delta):
 
 func interact():
 	if Input.is_action_just_pressed("Interact"):
-		emit_signal("interact_with_object")
+		emit_signal("interacted_with_object")
 
 func save():
 	return {

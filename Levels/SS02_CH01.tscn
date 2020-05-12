@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/ShipSquare.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/SS02_CH01.gd" type="Script" id=2]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Chapter I/ch01_links/cc02_ss_ch01.tres" type="Resource" id=4]
+[ext_resource path="res://Levels/Chapter I/ch01_links/rr_ss02_ch01.tres" type="Resource" id=5]
+[ext_resource path="res://Levels/Chapter I/ch01_links/er_ss02_ch01.tres" type="Resource" id=6]
+
+[node name="SS02_CH01" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="SideDoorPanel" parent="Doors/ReactorRoomDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="SideDoorPanel" parent="Doors/CrewQuartersDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="SideDoorPanel" parent="Doors/ArmoryDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="SideDoorPanel" parent="Doors/ResearchLabDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="SideDoorPanel" parent="Doors/WeaponsTechDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="SideDoorPanel" parent="Doors/CommandCenterDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="Collider" parent="Doors/UpperEngineDoor/Barrier" index="0"]
+position = Vector2( 0, 15 )
+disabled = true
+
+[node name="Collider" parent="Doors/UpperEngineDoor/Sensor" index="0"]
+position = Vector2( 0, 19 )
+
+[node name="DoorPanel" parent="Doors/UpperEngineDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="SideDoorPanel" parent="Doors/LowerEngineDoor" index="4"]
+interactable = false
+puzzle_solved = true
+
+[node name="CC02_Waypoint" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 743, 24 )
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/Chapter I/CC_CH01_02.tscn"
+
+[node name="RR_Waypoint" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 24, 24 )
+rotation = 3.14159
+connection = ExtResource( 5 )
+new_level_path = "res://Levels/Chapter I/RR_CH01.tscn"
+
+[node name="ER_Waypoint" parent="." index="4" instance=ExtResource( 3 )]
+position = Vector2( 384, -273 )
+rotation = 4.71239
+connection = ExtResource( 6 )
+new_level_path = "res://Levels/Chapter I/ER_CH01.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="Doors/UpperEngineDoor"]
+
+[editable path="Doors/LowerEngineDoor"]

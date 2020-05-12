@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/ReactorRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter I/RR_CH01.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Chapter I/ch01_links/rr_ss_ch01.tres" type="Resource" id=3]
+[ext_resource path="res://Levels/Chapter I/ch01_links/rr_ss02_ch01.tres" type="Resource" id=4]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=5]
+
+[node name="RR_CH01" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="DoorPanel" parent="FrontDoor" index="4"]
+puzzle_solved = true
+
+[node name="ControlPanelOne" parent="ControlPanels" index="0"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="ControlPanelTwo" parent="ControlPanels" index="1"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="ControlPanelThree" parent="ControlPanels" index="2"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="ControlPanelFour" parent="ControlPanels" index="3"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SS_Waypoint" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 311, 10 )
+rotation = 4.71239
+connection = ExtResource( 3 )
+new_level_path = "res://Levels/Chapter I/SS_CH01.tscn"
+
+[node name="SS02_Waypoint" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 311, 10 )
+rotation = 4.71239
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/SS02_CH01.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="FrontDoor"]

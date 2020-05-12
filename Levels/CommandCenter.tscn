@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Links/shipsquare_commandcenter.tres" type="Resource" id=2]
@@ -8,6 +8,98 @@
 [ext_resource path="res://Objects/Ship/PowerController.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Ship/DoorPanel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Ship/SideDoorPanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Resources/Objects/Spaceship/DoorPanel/door_panel_side.png" type="Texture" id=9]
+[ext_resource path="res://Objects/Ship/DoorPanel.gd" type="Script" id=10]
+[ext_resource path="res://Objects/Ship/FrontDoor.gd" type="Script" id=11]
+[ext_resource path="res://Resources/Objects/Spaceship/Door/door_front.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 22, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Close"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 9, 8, 7, 6, 5, 4, 3, 2 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 22, 9 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 3 )
 
 [node name="CommandCenter" instance=ExtResource( 1 )]
 
@@ -24,30 +116,98 @@ tile_data = PoolIntArray( -393216, 0, 0, -393215, 0, 1, -393214, 0, 1, -393213, 
 [node name="ShipSquareDoor" parent="." index="1" instance=ExtResource( 4 )]
 position = Vector2( 9, 24 )
 
-[node name="DoorPanel" parent="ShipSquareDoor" index="5" instance=ExtResource( 7 )]
+[node name="DoorPanel" parent="ShipSquareDoor" index="4" instance=ExtResource( 7 )]
 position = Vector2( 28, -45 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleEight.tscn"
 
-[node name="Waypoint" parent="." index="2" instance=ExtResource( 3 )]
+[node name="PowerControlDoor" parent="." index="2" instance=ExtResource( 5 )]
+position = Vector2( 169, -24 )
+
+[node name="Waypoint" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 27, 24 )
 rotation = 3.14159
 connection = ExtResource( 2 )
 new_level_path = "res://Levels/ShipSquare.tscn"
 
-[node name="FrontDoor" parent="." index="3" instance=ExtResource( 5 )]
-position = Vector2( 169, -24 )
-
-[node name="FrontDoor2" parent="." index="4" instance=ExtResource( 5 )]
-position = Vector2( 168, 72 )
-
-[node name="SideDoorPanel" parent="FrontDoor2" index="5" instance=ExtResource( 8 )]
-position = Vector2( -38, -28 )
-rotation = -1.5708
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleSeven.tscn"
-
-[node name="PowerController" parent="." index="5" instance=ExtResource( 6 )]
+[node name="PowerController" parent="." index="4" instance=ExtResource( 6 )]
 position = Vector2( 166, -223 )
+
+[node name="EntranceDoor" parent="." index="5" instance=ExtResource( 4 )]
+position = Vector2( 328, 23 )
+rotation = 3.14159
+
+[node name="SideDoorPanel" parent="EntranceDoor" index="4" instance=ExtResource( 8 )]
+position = Vector2( -12, -48 )
+rotation = 3.14159
+
+[node name="DataCenterDoor" type="Node2D" parent="." index="6"]
+position = Vector2( 168, 72 )
+script = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="DataCenterDoor" index="0"]
+texture = ExtResource( 12 )
+vframes = 3
+hframes = 4
+frame = 1
+
+[node name="Barrier" type="StaticBody2D" parent="DataCenterDoor" index="1"]
+collision_mask = 2
+
+[node name="Collider" type="CollisionShape2D" parent="DataCenterDoor/Barrier" index="0"]
+position = Vector2( 0, 23 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DataCenterDoor" index="2"]
+anims/Close = SubResource( 4 )
+anims/Error = SubResource( 5 )
+"anims/Idle Locked" = SubResource( 6 )
+"anims/Idle Unlocked" = SubResource( 7 )
+anims/Open = SubResource( 8 )
+
+[node name="Sensor" type="Area2D" parent="DataCenterDoor" index="3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collider" type="CollisionShape2D" parent="DataCenterDoor/Sensor" index="0"]
+modulate = Color( 0.113725, 0.654902, 0, 1 )
+position = Vector2( 0, 23 )
+shape = SubResource( 9 )
+
+[node name="DoorPanel" type="StaticBody2D" parent="DataCenterDoor" index="4" groups=[
+"InteractableObject",
+"PuzzleObject",
+]]
+position = Vector2( -47, -33 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="DataCenterDoor/DoorPanel" index="0"]
+rotation = 1.5708
+texture = ExtResource( 9 )
+
+[node name="Collider" type="CollisionShape2D" parent="DataCenterDoor/DoorPanel" index="1"]
+position = Vector2( 0, 5 )
+shape = SubResource( 1 )
+
+[node name="InteractArea" type="Area2D" parent="DataCenterDoor/DoorPanel" index="2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="InteractCollider" type="CollisionShape2D" parent="DataCenterDoor/DoorPanel/InteractArea" index="0"]
+modulate = Color( 0.0745098, 0.694118, 0.00392157, 1 )
+position = Vector2( 0, -4 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="DataCenterDoor/Sensor" to="DataCenterDoor" method="_on_Sensor_body_entered"]
+[connection signal="body_exited" from="DataCenterDoor/Sensor" to="DataCenterDoor" method="_on_Sensor_body_exited"]
+[connection signal="body_entered" from="DataCenterDoor/DoorPanel/InteractArea" to="DataCenterDoor/DoorPanel" method="_on_InteractArea_body_entered"]
+[connection signal="body_exited" from="DataCenterDoor/DoorPanel/InteractArea" to="DataCenterDoor/DoorPanel" method="_on_InteractArea_body_exited"]
 
 [editable path="ShipTileset"]
 
-[editable path="FrontDoor"]
+[editable path="ShipSquareDoor/DoorPanel"]
+
+[editable path="PowerControlDoor"]
+
+[editable path="PowerController"]
+
+[editable path="EntranceDoor"]

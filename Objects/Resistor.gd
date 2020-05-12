@@ -52,7 +52,7 @@ func _ready():
 	indicatorTwo.modulate = secondDigitColors.get(secondDigit)
 	indicatorThree.modulate = multiplierColors.get(multiplierDigit)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	calculate_resistor_value()
 
 func _on_UpOne_pressed():

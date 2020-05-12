@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"It seems that this is unfamiliar to you." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"Let me scan through my archives." },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"Ah! There it is." },
+    "004" : {"name":"Robot", "expression": "neutral", "text":"On the top left of your screen, you will see a database buttton" },
+    "005" : {"name":"Robot", "expression": "neutral", "text":"Kindly press the database buttton." }
+}

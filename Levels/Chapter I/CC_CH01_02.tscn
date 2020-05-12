@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/CommandCenter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter I/CC_CH01_02.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Chapter I/PowerController.gd" type="Script" id=3]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Chapter I/ch01_links/cc02_ss_ch01.tres" type="Resource" id=5]
+[ext_resource path="res://Levels/Chapter I/ch01_links/cc_ss_ch01.tres" type="Resource" id=6]
+
+[node name="CC_CH01_02" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="DoorPanel" parent="ShipSquareDoor" index="4"]
+interactable = false
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzle_solved = true
+
+[node name="DoorPanel" parent="PowerControlDoor" index="4"]
+interactable = false
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzle_solved = true
+
+[node name="Waypoint" parent="." index="3"]
+position = Vector2( 25, 24 )
+connection = ExtResource( 5 )
+new_level_path = "res://Levels/SS02_CH01.tscn"
+
+[node name="PowerController" parent="." index="4"]
+script = ExtResource( 3 )
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SideDoorPanel" parent="EntranceDoor" index="4"]
+interactable = false
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzle_solved = true
+
+[node name="DoorPanel" parent="DataCenterDoor" index="4" groups=[
+"DoorPanel",
+]]
+interactable = false
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzle_solved = true
+
+[node name="SS_Waypoint" parent="." index="7" instance=ExtResource( 4 )]
+position = Vector2( 25, 24 )
+rotation = 3.14159
+connection = ExtResource( 6 )
+new_level_path = "res://Levels/Chapter I/SS_CH01.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="ShipSquareDoor/DoorPanel"]
+
+[editable path="PowerControlDoor"]
+
+[editable path="PowerController"]
+
+[editable path="EntranceDoor"]
+
+[editable path="SS_Waypoint"]

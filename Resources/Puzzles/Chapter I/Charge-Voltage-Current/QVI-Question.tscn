@@ -7,9 +7,11 @@
 "Persists",
 ] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-puzzle_id = "001"
 
-[node name="Question" type="Label" parent="." index="0"]
+[node name="Background" parent="." index="0"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="Question" type="Label" parent="." index="1"]
 margin_left = 68.2406
 margin_top = 38.4033
 margin_right = 267.241
@@ -19,7 +21,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="True" type="Button" parent="." index="1"]
+[node name="True" type="Button" parent="." index="2"]
 margin_left = 109.071
 margin_top = 104.638
 margin_right = 152.071
@@ -29,7 +31,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="False" type="Button" parent="." index="2"]
+[node name="False" type="Button" parent="." index="3"]
 margin_left = 174.566
 margin_top = 104.978
 margin_right = 220.566
@@ -38,5 +40,9 @@ text = "False"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PromptTimer" type="Timer" parent="." index="5"]
+wait_time = 3.0
+one_shot = true
 [connection signal="pressed" from="True" to="." method="_on_True_pressed"]
 [connection signal="pressed" from="False" to="." method="_on_False_pressed"]

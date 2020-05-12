@@ -3,7 +3,7 @@
 [ext_resource path="res://World/World.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Systems/PauseSystem/UI.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/CommandCenter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Chapter I/CC_CH01.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Systems/Camera/Camera.tscn" type="PackedScene" id=5]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
@@ -11,10 +11,10 @@
 [node name="World" type="Node"]
 script = ExtResource( 1 )
 
-[node name="CommandCenter" parent="." instance=ExtResource( 4 )]
+[node name="CC_CH01" parent="." instance=ExtResource( 4 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 699, 43 )
+position = Vector2( 590, 21 )
 
 [node name="AnimationTree" parent="Player" index="3"]
 parameters/playback = SubResource( 1 )
@@ -25,7 +25,10 @@ remote_path = NodePath("../../Camera")
 [node name="UI" parent="." instance=ExtResource( 3 )]
 
 [node name="Camera" parent="." instance=ExtResource( 5 )]
-position = Vector2( 699, 43 )
+position = Vector2( 590, 21 )
 current = true
+smoothing_enabled = true
 
 [editable path="Player"]
+
+[editable path="UI"]
