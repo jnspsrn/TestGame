@@ -1,0 +1,4 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"This seems like a personal log of a crew member in the lost expedition." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"Return to the Commander and give this to him." }
+}

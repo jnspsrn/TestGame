@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"You are needed in the engine room. There is a problem with the control panels." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"It might be the same case as with the reactor control panels." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Player, kindly check it out and report back to me for any progress." }
+}

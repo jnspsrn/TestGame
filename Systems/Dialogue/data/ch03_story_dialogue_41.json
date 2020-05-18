@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, we have managed to cross the asteroid belt but one of the thrusters has been damaged." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"I see. That would cause a lot of problems if not solved immediately." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Player, will you please relay to the Armorer of the situation?" }
+}

@@ -1,5 +1,0 @@
-{
-    "001" : {"name":"Player", "expression": "neutral", "text":"The door is locked." },
-    "002" : {"name":"Robot", "expression": "neutral", "text":"Maybe we can hack it open through the door panel." },
-    "003" : {"name":"Robot", "expression": "neutral", "text":"Go near the control panel and press F to interact with it!" }
-}

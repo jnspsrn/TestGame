@@ -1,4 +1,0 @@
-{
-    "001" : {"name":"Player", "expression": "neutral", "text":"Robot?" },
-    "002" : {"name":"Robot", "expression": "neutral", "text":"It's good to be alive!" }
-}

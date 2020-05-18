@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/Chapter III/SS_CH03.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter III/SS_CH03_02.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Chapter III/ch03_links/cc02_ss02_ch03.tres" type="Resource" id=3]
+[ext_resource path="res://Levels/Chapter III/ch03_links/ds_ss02_ch03.tres" type="Resource" id=4]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=5]
+
+[node name="SS_CH03_02" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="CC_CH02_Waypoint" parent="." index="2"]
+connection = ExtResource( 3 )
+new_level_path = "res://Levels/Chapter III/CC_CH03_02.tscn"
+
+[node name="CollisionShape2D" parent="A_CH02_Waypoint" index="0"]
+disabled = false
+
+[node name="DS_CH03" parent="." index="6" instance=ExtResource( 5 )]
+position = Vector2( 384, 357 )
+rotation = 1.5708
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/Chapter III/DS_CH03.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="Doors/LowerEngineDoor"]
+
+[editable path="A_CH02_Waypoint"]

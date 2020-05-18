@@ -2,6 +2,7 @@ extends PuzzleObject
 
 func interaction():
 	if ProgressManager.chapter_1_progress['is_RR_CH01_completed']:
+		yield(Utils.prompt_dialogue("ch01_story_dialogue_19.json"), "completed")
 		if is_puzzle_open == false:
 			is_puzzle_open = true
 			var PuzzlePath = load(puzzlePath)
@@ -17,4 +18,4 @@ func interaction():
 			emit_signal("closed_puzzle")
 			set_interactable()
 	else:
-		Utils.prompt_dialogue('ch01_pc_reactor_not_completed.json')
+		Utils.prompt_dialogue('ch01_story_dialogue_19.json')

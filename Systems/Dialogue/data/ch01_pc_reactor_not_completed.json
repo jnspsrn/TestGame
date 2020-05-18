@@ -1,4 +1,0 @@
-{
-    "001" : {"name":"Robot", "expression": "neutral", "text":"Power still needs to be restored!" },
-    "002" : {"name":"Robot", "expression": "neutral", "text":"Go to the reactor room and reset the reactors." }
-}

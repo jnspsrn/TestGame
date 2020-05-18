@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"What happened? It suddenly went dark." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"The ship crashed into a planet." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"I probably should go check for damages." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"Thank you by the way." }
+}

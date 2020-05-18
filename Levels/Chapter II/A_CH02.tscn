@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/Armory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter II/ch02_links/a_ss_ch02.tres" type="Resource" id=2]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Chapter II/A_CH02.gd" type="Script" id=4]
+[ext_resource path="res://Levels/Chapter II/Armorer.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Objects/Characters/Player/character_movement_sheet.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 16 )
+
+[node name="A_CH02" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="SDS_01" parent="SuitDockingStations" index="0"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_02" parent="SuitDockingStations" index="1"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_03" parent="SuitDockingStations" index="2"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_04" parent="SuitDockingStations" index="3"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_05" parent="SuitDockingStations" index="4"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_06" parent="SuitDockingStations" index="5"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_07" parent="SuitDockingStations" index="6"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_08" parent="SuitDockingStations" index="7"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_09" parent="SuitDockingStations" index="8"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_10" parent="SuitDockingStations" index="9"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_11" parent="SuitDockingStations" index="10"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SDS_12" parent="SuitDockingStations" index="11"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SS_CH02_Waypoint" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 360, 193 )
+connection = ExtResource( 2 )
+new_level_path = "res://Levels/Chapter II/SS_CH02.tscn"
+
+[node name="Armorer" type="StaticBody2D" parent="." index="4" groups=[
+"InteractableObject",
+]]
+position = Vector2( 322, 193 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Armorer" index="0"]
+texture = ExtResource( 6 )
+vframes = 4
+hframes = 8
+frame = 24
+
+[node name="Collider" type="CollisionShape2D" parent="Armorer" index="1"]
+position = Vector2( 0, 12 )
+shape = SubResource( 1 )
+
+[node name="InteractArea" type="Area2D" parent="Armorer" index="2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="InteractCollider" type="CollisionShape2D" parent="Armorer/InteractArea" index="0"]
+modulate = Color( 0.121569, 0.705882, 0, 1 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Armorer/InteractArea" to="Armorer" method="_on_InteractArea_body_entered"]
+[connection signal="body_exited" from="Armorer/InteractArea" to="Armorer" method="_on_InteractArea_body_exited"]
+
+[editable path="ShipTileset"]
+
+[editable path="SS_CH02_Waypoint"]

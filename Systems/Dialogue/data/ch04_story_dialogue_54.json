@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"What is the report from the survey team?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, there is a rich deposit of valuable minerals in a nearby location." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"However, we will need to upgrade our tools for extraction." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"Player, kindly coordinate with the Researcher and upgrade the tools needed for extraction." }
+}

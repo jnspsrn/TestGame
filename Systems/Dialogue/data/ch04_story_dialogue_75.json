@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"I also think our weapons needed upgrading." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"Here’s a list of things you should do." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"You may work on them on the bench over there." }
+}

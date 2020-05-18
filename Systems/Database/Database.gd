@@ -9,5 +9,8 @@ func set_opened(value):
 
 func _on_Charge_pressed():
 	if not ProgressManager.chapter_1_progress["is_charge_selected"]:
-		yield(Utils.prompt_dialogue("ch01_evnt_04_charge_tutorial.json"), "completed")
+		yield(Utils.prompt_dialogue("ch01_story_dialogue_06.json"), "completed")
 		ProgressManager.chapter_1_progress["is_charge_selected"] = true
+	var TestCharge = load("res://TestCharge.tscn")
+	var testCharge = TestCharge.instance()
+	self.add_child(testCharge)

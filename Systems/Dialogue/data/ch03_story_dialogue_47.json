@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Commander, the main entrance is stuck. We will need the help of the Player." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"You heard that? Kindly assist them." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Good luck!" }
+}

@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, we found this several miles from here." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"This is familiar. But I don’t know what exactly." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Let’s send this to the Researcher. He might know what to do." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"Player, I need you to assist the Researcher. He might need your skills." }
+}

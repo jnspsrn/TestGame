@@ -13,13 +13,13 @@ script = ExtResource( 3 )
 [node name="SideDoorPanel" parent="Doors/ReactorRoomDoor" index="4"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
-[node name="CrewQuartersDoor" parent="Doors" index="1"]
-position = Vector2( 103, 312 )
-
-[node name="SideDoorPanel" parent="Doors/CrewQuartersDoor" index="4"]
+[node name="SideDoorPanel" parent="Doors/ArmoryDoor" index="4"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
-[node name="SideDoorPanel" parent="Doors/ArmoryDoor" index="4"]
+[node name="CrewQuartersDoor" parent="Doors" index="2"]
+position = Vector2( 103, -218 )
+
+[node name="SideDoorPanel" parent="Doors/CrewQuartersDoor" index="4"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
 [node name="SideDoorPanel" parent="Doors/ResearchLabDoor" index="4"]

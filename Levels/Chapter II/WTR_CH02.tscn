@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Levels/WeaponsTechRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter II/ch02_links/wtr_ss_ch02.tres" type="Resource" id=2]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Chapter II/WTR_CH02.gd" type="Script" id=4]
+[ext_resource path="res://Levels/Chapter II/WeaponTechnician.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Objects/Characters/Player/character_movement_sheet.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25, 12 )
+
+[node name="WTR_CH02" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="WDS_01" parent="WeaponDockingStations" index="0"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_02" parent="WeaponDockingStations" index="1"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_03" parent="WeaponDockingStations" index="2"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_04" parent="WeaponDockingStations" index="3"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_05" parent="WeaponDockingStations" index="4"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_06" parent="WeaponDockingStations" index="5"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_07" parent="WeaponDockingStations" index="6"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_08" parent="WeaponDockingStations" index="7"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_09" parent="WeaponDockingStations" index="8"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_10" parent="WeaponDockingStations" index="9"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_11" parent="WeaponDockingStations" index="10"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WDS_12" parent="WeaponDockingStations" index="11"]
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SS_CH02_Waypoint" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 45, 279 )
+rotation = 3.14159
+connection = ExtResource( 2 )
+new_level_path = "res://Levels/Chapter II/SS_CH02.tscn"
+
+[node name="WeaponTechnician" type="StaticBody2D" parent="." index="4" groups=[
+"InteractableObject",
+]]
+position = Vector2( 109, 278 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="WeaponTechnician" index="0"]
+texture = ExtResource( 6 )
+vframes = 4
+hframes = 8
+frame = 8
+
+[node name="Collider" type="CollisionShape2D" parent="WeaponTechnician" index="1"]
+position = Vector2( 0, 12 )
+shape = SubResource( 1 )
+
+[node name="InteractArea" type="Area2D" parent="WeaponTechnician" index="2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="InteractCollider" type="CollisionShape2D" parent="WeaponTechnician/InteractArea" index="0"]
+modulate = Color( 0.266667, 0.737255, 0, 1 )
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="WeaponTechnician/InteractArea" to="WeaponTechnician" method="_on_InteractArea_body_entered"]
+[connection signal="body_exited" from="WeaponTechnician/InteractArea" to="WeaponTechnician" method="_on_InteractArea_body_exited"]
+
+[editable path="ShipTileset"]

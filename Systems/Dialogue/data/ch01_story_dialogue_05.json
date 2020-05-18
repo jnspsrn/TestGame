@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"This is your personal database. Information may be accessed here." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"To access information that you need…" },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"Press the button with the keyword related to the information that you need." }
+}

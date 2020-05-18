@@ -1,0 +1,9 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"The Commander wants me to fix the thrusters?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"It will take a bit of time to finish." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"I will also need your help to finish it." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"Here are the things that you need to solve." },
+    "005" : {"name":"CrewOne", "expression": "neutral", "text":"Do them on the workbench over there." },
+    "006" : {"name":"CrewOne", "expression": "neutral", "text":"Here’s also an addition to your database in case you don’t know something." }
+}
+

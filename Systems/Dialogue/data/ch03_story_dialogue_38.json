@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"So the Commander needs some big guns for those asteroids, huh?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"I will be needing your help in making those." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"Here’s a set manual. Head to the workbench and solve the puzzles." }
+}

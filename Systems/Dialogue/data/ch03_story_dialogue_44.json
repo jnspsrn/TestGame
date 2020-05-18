@@ -1,0 +1,11 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"The thrusters should be fine now that the Armorer is working on it." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"Commander, we are getting visual on an object." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Let me see." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"!!!" },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"That is the lost expedition’s ship!" },
+    "006" : {"name":"Commander", "expression": "neutral", "text":"We should send a team in there." },
+    "007" : {"name":"Commander", "expression": "neutral", "text":"Player, I must task you to check on the jets and see if they are working properly." },
+    "008" : {"name":"Commander", "expression": "neutral", "text":"They will be used by the party members." },
+    "009" : {"name":"Commander", "expression": "neutral", "text":"Report back to me once you’re done." }
+}

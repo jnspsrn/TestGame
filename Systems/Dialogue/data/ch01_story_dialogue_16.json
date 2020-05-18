@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Hey there! You’re the one assigned for circuitries, right?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"The control panels are not functioning. We cannot control the reactor." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"We need you to check it out." },
+    "004" : {"name":"Robot", "expression": "neutral", "text":"That’s unfortunate." },
+    "005" : {"name":"Robot", "expression": "neutral", "text":"Let’s go check the control panels." }
+}

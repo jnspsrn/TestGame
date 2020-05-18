@@ -1,8 +1,6 @@
 extends EventPrompt
 
-onready var dialoguePrompt = $DialoguePrompt
-
 func _on_StartDialogue_body_entered(player):
 	if player == GameManager.Player:
-		yield(dialoguePrompt.interact(), "completed")
+		Utils.prompt_dialogue("ch01_story_dialogue_01.json")
 	self.queue_free()

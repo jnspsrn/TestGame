@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"Great work." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"We should be more time-efficient now." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"However, I want the extraction to be hastened." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"Can you go to the Weapon Technician and ask him what tweaks can be done to improve the tools?" }
+}

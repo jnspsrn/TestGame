@@ -1,0 +1,4 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"Look! The door’s indicator is lit red. That means it is locked." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"Let’s try checking its control panel." }
+}

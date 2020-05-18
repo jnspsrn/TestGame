@@ -5,7 +5,7 @@
 [ext_resource path="res://Objects/Ship/DoorPanel.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22, 1 )
+extents = Vector2( 24, 1 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Close"
@@ -84,7 +84,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 22, 9 )
+extents = Vector2( 22, 5 )
 
 [node name="FrontDoor" type="Node2D"]
 script = ExtResource( 2 )
@@ -114,7 +114,7 @@ collision_mask = 2
 
 [node name="Collider" type="CollisionShape2D" parent="Sensor"]
 modulate = Color( 0.113725, 0.654902, 0, 1 )
-position = Vector2( 0, 23 )
+position = Vector2( -1, 30 )
 shape = SubResource( 7 )
 
 [node name="DoorPanel" parent="." instance=ExtResource( 3 )]

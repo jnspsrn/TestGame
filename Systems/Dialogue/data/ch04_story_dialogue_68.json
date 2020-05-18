@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"Job well done!" },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"Hopefully, we’ll be able to finish the extraction a week from now." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"While we’re at it, maybe you can go to the Armorer and ask if he can strengthen the ship’s defenses." }
+}

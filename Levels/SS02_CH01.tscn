@@ -14,11 +14,11 @@ script = ExtResource( 2 )
 interactable = false
 puzzle_solved = true
 
-[node name="SideDoorPanel" parent="Doors/CrewQuartersDoor" index="4"]
+[node name="SideDoorPanel" parent="Doors/ArmoryDoor" index="4"]
 interactable = false
 puzzle_solved = true
 
-[node name="SideDoorPanel" parent="Doors/ArmoryDoor" index="4"]
+[node name="SideDoorPanel" parent="Doors/CrewQuartersDoor" index="4"]
 interactable = false
 puzzle_solved = true
 

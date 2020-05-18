@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Levels/Chapter IV/SS_CH04.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter IV/SS_CH04_03.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/cc03_ss03_ch04.tres" type="Resource" id=3]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/wtr02_ss03_ch04.tres" type="Resource" id=4]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/a_ss03_ch04.tres" type="Resource" id=6]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/rl03_ss03_ch04.tres" type="Resource" id=7]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/wtr03_ss03_ch04.tres" type="Resource" id=8]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/er_ss03_ch04.tres" type="Resource" id=9]
+
+[node name="SS_CH04_03" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="CC_CH04" parent="." index="2"]
+connection = ExtResource( 3 )
+new_level_path = "res://Levels/Chapter IV/CC_CH04_03.tscn"
+
+[node name="WTR_CH04_02" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 642, 312 )
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/Chapter IV/WTR_CH04_02.tscn"
+
+[node name="WTR_CH04_03" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 642, 312 )
+connection = ExtResource( 8 )
+new_level_path = "res://Levels/Chapter IV/WTR_CH04_03.tscn"
+
+[node name="CollisionShape2D" parent="WTR_CH04_03" index="0"]
+disabled = true
+
+[node name="RL_CH04_03" parent="." index="6" instance=ExtResource( 5 )]
+position = Vector2( 641, -216 )
+connection = ExtResource( 7 )
+new_level_path = "res://Levels/Chapter IV/RL_CH04_03.tscn"
+
+[node name="CollisionShape2D" parent="RL_CH04_03" index="0"]
+disabled = true
+
+[node name="A_CH04" parent="." index="7" instance=ExtResource( 5 )]
+position = Vector2( 125, 314 )
+rotation = 3.14159
+connection = ExtResource( 6 )
+new_level_path = "res://Levels/Chapter IV/A_CH04.tscn"
+
+[node name="ER_CH04" parent="." index="8" instance=ExtResource( 5 )]
+position = Vector2( 383, -274 )
+rotation = 4.71239
+connection = ExtResource( 9 )
+new_level_path = "res://Levels/Chapter IV/ER_CH04.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="Doors/LowerEngineDoor"]
+
+[editable path="WTR_CH04_02"]
+
+[editable path="WTR_CH04_03"]
+
+[editable path="RL_CH04_03"]

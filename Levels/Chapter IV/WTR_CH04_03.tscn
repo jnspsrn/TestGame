@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/WeaponsTechRoom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter IV/WTR_CH04_03.gd" type="Script" id=2]
+[ext_resource path="res://Objects/Ship/Workbench.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Ship/WeaponTechnician.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Ship/WT_CH04_03.gd" type="Script" id=5]
+
+[node name="WTR_CH04_03" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Workbench" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( 78, 52 )
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="WT_CH04_03" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( 112, 272 )
+script = ExtResource( 5 )
+
+[editable path="ShipTileset"]

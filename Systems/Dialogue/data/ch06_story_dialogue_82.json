@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"A personal log?" },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"Hmmm. Let me see." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"…" },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"……" },
+    "005" : {"name":"CrewOne", "expression": "neutral", "text":"……….?!" }
+}

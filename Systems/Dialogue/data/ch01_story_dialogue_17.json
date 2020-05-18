@@ -1,0 +1,9 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"All the panels seem to be working now." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"We will be able to restore the power in a moment." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"…" },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"……" },
+    "005" : {"name":"CrewOne", "expression": "neutral", "text":"There she goes. Power is restored now." },
+    "006" : {"name":"CrewOne", "expression": "neutral", "text":"Thank you so much for your help!" },
+    "007" : {"name":"Robot", "expression": "neutral", "text":"Let’s return to the Commander and report our progress." }
+}

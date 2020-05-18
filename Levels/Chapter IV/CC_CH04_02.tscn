@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/Chapter IV/CC_CH04.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter IV/CC_CH04_02.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/cc02_ss02_ch04.tres" type="Resource" id=3]
+[ext_resource path="res://Levels/Chapter IV/Commander_ch04_02.gd" type="Script" id=4]
+
+[node name="CC_CH04_02" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Waypoint" parent="." index="3"]
+connection = ExtResource( 3 )
+new_level_path = "res://Levels/Chapter IV/SS_CH04_02.tscn"
+
+[node name="Commander" parent="." index="7"]
+script = ExtResource( 4 )
+
+[editable path="ShipTileset"]
+
+[editable path="ShipSquareDoor/DoorPanel"]
+
+[editable path="PowerControlDoor"]
+
+[editable path="PowerController"]
+
+[editable path="EntranceDoor"]

@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Optimizing the space jet, yes?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"We can do it if we complete these." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"Here’s a list of your load. Kindly work on them on the workbench." }
+}

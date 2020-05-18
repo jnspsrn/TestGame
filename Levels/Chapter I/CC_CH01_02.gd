@@ -23,5 +23,5 @@ func _on_is_solved(object):
 		powerControl:
 			if not ProgressManager.chapter_1_progress['is_powerControl_unlocked']:
 				powerControl.interaction()
-				Utils.prompt_dialogue("ch01_pc_power_control_completed.json")
+				Utils.prompt_dialogue("ch01_story_dialogue_20.json")
 				ProgressManager.chapter_1_progress['is_powerControl_unlocked'] = true

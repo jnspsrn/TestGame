@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Pheeew! I thought the weapon I was tinkering broke!" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"Glad it ain’t the case. But I ain’t glad with the situation" },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"Thanks for saving me from being trapped though." }
+}

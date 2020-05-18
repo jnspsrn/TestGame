@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"It’s done?" },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"There is one last thing that we need to do." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"We need to optimize the control system for the engines." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"Go to the engine room and see what you can do." }
+}

@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"Player! You’re here to assist me right?" },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"I want you to help me unlock this part of the machine." },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"You might have an idea." }
+}

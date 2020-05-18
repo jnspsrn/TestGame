@@ -13,6 +13,9 @@ func _ready():
 	controlPanelFour.connect("is_solved", self, "_on_is_solved")
 	ss_Waypoint.disabled = true
 	
+	if not ProgressManager.chapter_1_progress['prompted_dialogue_16']:
+		Utils.prompt_dialogue("ch01_story_dialogue_16.json")
+		ProgressManager.chapter_1_progress['prompted_dialogue_16'] = true
 
 func _on_is_solved(object):
 	match object:
@@ -37,5 +40,4 @@ func _on_is_solved(object):
 		and ProgressManager.chapter_1_progress['is_controlPanelThree_unlocked']
 		and ProgressManager.chapter_1_progress['is_controlPanelFour_unlocked']):
 			ProgressManager.chapter_1_progress['is_RR_CH01_completed'] = true
-			Utils.prompt_dialogue("ch01_evnt_13_RR_CH01_completed .json")
-			print("LEVEL COMPLETED")
+			Utils.prompt_dialogue("ch01_story_dialogue_17.json")

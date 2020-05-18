@@ -1,0 +1,12 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"Is this the report from the Researcher?" },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"…" },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"……" },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"……….?!" },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"T-This is an SOS pod from the lost expedition, the first ever expedition of humanity!" },
+    "006" : {"name":"Commander", "expression": "neutral", "text":"We never heard of them after passing through the unknown territory at that time." },
+    "007" : {"name":"Commander", "expression": "neutral", "text":"We might have a lead here as to their whereabouts and fate." },
+    "008" : {"name":"Commander", "expression": "neutral", "text":"It’s navigation data points to a space near here." },
+    "009" : {"name":"Commander", "expression": "neutral", "text":"Set course towards the point!" },
+    "010" : {"name":"CrewOne", "expression": "neutral", "text":"Aye!" }
+}

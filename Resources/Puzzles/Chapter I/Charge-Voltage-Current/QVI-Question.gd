@@ -26,10 +26,10 @@ func _exit_tree():
 	GameManager.WorldCamera.current = true
 	GameManager.UI.databaseButton.show()
 	if not ProgressManager.chapter_1_progress["is_first_doorpanel_interacted"]:
-		Utils.prompt_dialogue("ch01_evnt_02.json")
+		Utils.prompt_dialogue("ch01_story_dialogue_04.json")
 		ProgressManager.chapter_1_progress["is_first_doorpanel_interacted"] = true
 	if ProgressManager.chapter_1_progress["is_entrance_door_opened"] and solved:
-		Utils.prompt_dialogue("ch01_evnt_05_door_opened.json")
+		Utils.prompt_dialogue("ch01_story_dialogue_07.json")
 
 func _on_True_pressed():
 	playerAnswer = true

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/InteractableObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/Characters/Player/character_movement_sheet.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Ship/Commander.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 24 )
+
+[node name="Commander" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+vframes = 4
+hframes = 8
+frame = 24
+
+[node name="Collider" parent="." index="1"]
+position = Vector2( 0, 11 )
+shape = SubResource( 1 )
+
+[node name="InteractCollider" parent="InteractArea" index="0"]
+modulate = Color( 0, 0.737255, 0.0980392, 1 )
+shape = SubResource( 2 )

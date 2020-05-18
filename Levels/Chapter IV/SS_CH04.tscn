@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/ShipSquare.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Chapter IV/SS_CH04.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/cc_ss_ch04.tres" type="Resource" id=4]
+[ext_resource path="res://Levels/Chapter IV/ch04_links/rl_ss_ch04.tres" type="Resource" id=5]
+
+[node name="SS_CH04" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="CC_CH04" parent="." index="2" instance=ExtResource( 2 )]
+position = Vector2( 739, 24 )
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/Chapter IV/CC_CH04.tscn"
+
+[node name="RL_CH04" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( 643, -216 )
+connection = ExtResource( 5 )
+new_level_path = "res://Levels/Chapter IV/RL_CH04.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="Doors/LowerEngineDoor"]

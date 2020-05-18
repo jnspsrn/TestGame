@@ -94,6 +94,7 @@ func load_data():
 	SaveAndLoad.load_game()
 
 func change_levels(door):
+	SaveAndLoad.save_event_prompts()
 	var offset = GameManager.CurrentLevel.position
 	GameManager.CurrentLevel.queue_free()
 	var NewLevel = load(door.new_level_path)

@@ -1,0 +1,18 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"What is this? The report? Let me see." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"…" },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"……" },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"………?!" },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"They were abducted?" },
+    "006" : {"name":"Commander", "expression": "neutral", "text":"Based on the data acquired, the lost expedition have been abducted by an alien life form. " },
+    "007" : {"name":"Commander", "expression": "neutral", "text":"Good thing that we have a lead on where to find them." },
+    "008" : {"name":"Commander", "expression": "neutral", "text":"The chief engineer installed a tracker on their suits in case someone gets the SOS." },
+    "009" : {"name":"Commander", "expression": "neutral", "text":"We have to help them. One way or another." },
+    "010" : {"name":"CrewOne", "expression": "neutral", "text":"But sir, we may be underpowered." },
+    "011" : {"name":"Commander", "expression": "neutral", "text":"Then we should make preparations for any circumstance." },
+    "012" : {"name":"CrewOne", "expression": "neutral", "text":"Aye!" },
+    "013" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, it may be wise for us to land on the nearby planet. We may be able to get resources." },
+    "014" : {"name":"CrewOne", "expression": "neutral", "text":"Scans suggests that it is a lush planet with a lot of minerals." },
+    "015" : {"name":"Commander", "expression": "neutral", "text":"Let’s land there then." },
+    "016" : {"name":"Commander", "expression": "neutral", "text":"Set course!" }
+}

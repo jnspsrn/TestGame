@@ -1,0 +1,4 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"It seems that several doors are locked." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"Let’s go downstairs and check each panel." }
+}

@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"It’s being done now?" },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"That’s impressive." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Now, I need you to go speak with the Researcher." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"We want to optimize the space jets in case we get attacked." },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"Kindly coordinate with the Researcher in this task." }
+}

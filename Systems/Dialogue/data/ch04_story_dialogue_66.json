@@ -1,0 +1,8 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"What’s up?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"The Commander wants the extraction process hastened?" },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"I say we use explosives." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"To create them, we will need to do these together." },
+    "005" : {"name":"CrewOne", "expression": "neutral", "text":"Here is the list of things you need to do." },
+    "006" : {"name":"CrewOne", "expression": "neutral", "text":"Work on them on the workbench there." }
+}

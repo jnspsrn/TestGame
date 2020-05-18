@@ -7,6 +7,9 @@ onready var engineControlFour = $EngineControlFour
 
 func _ready():
 	call_deferred("set_engine_panel")
+	if not ProgressManager.chapter_1_progress['prompted_dialogue_22']:
+		yield(Utils.prompt_dialogue("ch01_story_dialogue_22.json"), "completed")
+		ProgressManager.chapter_1_progress['prompted_dialogue_22'] = true
 
 func _on_is_solved(object):
 	match object:
@@ -31,8 +34,9 @@ func _on_is_solved(object):
 		and ProgressManager.chapter_1_progress['is_engineControlThree_unlocked']
 		and ProgressManager.chapter_1_progress['is_engineControlFour_unlocked']):
 			ProgressManager.chapter_1_progress['is_ER_CH01_completed'] = true
-			Utils.prompt_dialogue("ch01_evnt_13_RR_CH01_completed .json")
-			print("LEVEL COMPLETED")
+			yield(Utils.prompt_dialogue("ch01_story_dialogue_23.json"), "completed")
+			Utils.next_chapter("res://Levels/Chapter II/CC_CH02.tscn", Vector2(590,21))
+			
 
 func set_engine_panel():
 	if ProgressManager.chapter_1_progress['is_ER_CH01_completed']:

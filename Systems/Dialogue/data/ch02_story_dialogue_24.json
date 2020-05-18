@@ -1,0 +1,13 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"Sir, the problem with the panels is now solved." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"The mechanical team is currently working on powering the engine back." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"That’s good to hear." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"However, we might need to stay here for a while." },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"While you were away, we have found what hit us. It crashed into the planet with us." },
+    "006" : {"name":"Commander", "expression": "neutral", "text":"We need to send out a search party to investigate…" },
+    "007" : {"name":"Commander", "expression": "neutral", "text":"And collect any information about it" },
+    "008" : {"name":"Commander", "expression": "neutral", "text":"However, we will need to prepare the equipment needed for the search.party." },
+    "009" : {"name":"Commander", "expression": "neutral", "text":"Report to the Researcher, Armorer, and the Weapon Technician." },
+    "010" : {"name":"Commander", "expression": "neutral", "text":"Head first to the Researcher." },
+    "011" : {"name":"Commander", "expression": "neutral", "text":"He will relay you further instructions." }
+}

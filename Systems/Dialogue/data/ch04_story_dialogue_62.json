@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, we suggest to begin processing the gathered materials. They have been piling up now." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"It would be more time-efficient that way." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"That’s a good idea" },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"However, we will need processing machines." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Player, kindly coordinate with the Researcher." }
+}

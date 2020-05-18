@@ -1,0 +1,8 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Hello there! Nice to meet ya again." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"The Commander sent you to me, right?" },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"Here’s what we need to do." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"We need to install these modules to the weapons docked in their stations." },
+    "005" : {"name":"CrewOne", "expression": "neutral", "text":"The search party will be needing these in case they encounter anything hostile." },
+    "006" : {"name":"CrewOne", "expression": "neutral", "text":"Aight, let’s start." }
+}

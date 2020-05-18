@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, no one is aboard. However, we have extracted the ship’s core." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"I see. We might need to extract the data inside it." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Player, kindly coordinate with the Researcher with this task." }
+}

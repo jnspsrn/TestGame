@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, we have found something near the mines." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"Hmmm. What is this?" },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"It must come from the lost expedition’s ship." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"Let’s unlock this then." },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"Player, kindly coordinate with the Researcher and see what you can do with this." }
+}

@@ -8,32 +8,16 @@
 [node name="ER_CH01" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="EngineControlOne" parent="." index="3" groups=[
-"InteractableObject",
-]]
-collision_layer = 0
-collision_mask = 2
+[node name="EngineControlOne" parent="." index="3"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
-[node name="EngineControlTwo" parent="." index="4" groups=[
-"InteractableObject",
-]]
-collision_layer = 0
-collision_mask = 2
+[node name="EngineControlTwo" parent="." index="4"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
-[node name="EngineControlThree" parent="." index="5" groups=[
-"InteractableObject",
-]]
-collision_layer = 0
-collision_mask = 2
+[node name="EngineControlThree" parent="." index="5"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
-[node name="EngineControlFour" parent="." index="6" groups=[
-"InteractableObject",
-]]
-collision_layer = 0
-collision_mask = 2
+[node name="EngineControlFour" parent="." index="6"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
 [node name="SS02_Waypoint" parent="." index="7" instance=ExtResource( 3 )]

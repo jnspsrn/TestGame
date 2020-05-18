@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Heeeelp! Heeeee-" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"…" },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"I’m out! I’m out!" },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"Hey there! Thank you so much!" }
+}

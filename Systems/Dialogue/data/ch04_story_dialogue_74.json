@@ -1,0 +1,8 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"I see you’ve returned. Is it done?" },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"That’s good." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"I’m giving you another task now." },
+    "004" : {"name":"Commander", "expression": "neutral", "text":"We need to upgrade the weapons of our ship. All of them." },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"We need all the preparations that we can do just to increase our chances of surviving." },
+    "006" : {"name":"Commander", "expression": "neutral", "text":"Go to the Weapon Technician and tell him of the task." }
+}

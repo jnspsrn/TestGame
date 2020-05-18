@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"It seems that we need to give a correct input to the terminal." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"However, from your reaction…" },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"I suppose that you have little information about the topic." },
+    "004" : {"name":"Robot", "expression": "neutral", "text":"Here, I’m uploading a file to your personal database." },
+    "005" : {"name":"Robot", "expression": "neutral", "text":"Press the Database button on the top right of your screen to open your database." }
+}

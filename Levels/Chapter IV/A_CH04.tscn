@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/Armory.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Ship/Armorer_ch04.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Chapter IV/A_CH04.gd" type="Script" id=3]
+[ext_resource path="res://Objects/Ship/Armorer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Ship/Workbench.tscn" type="PackedScene" id=5]
+
+[node name="A_CH04" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Workbench" parent="." index="3" instance=ExtResource( 5 )]
+position = Vector2( 319, 47 )
+
+[node name="Armorer_ch04" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( 319, 190 )
+script = ExtResource( 2 )
+
+[editable path="ShipTileset"]

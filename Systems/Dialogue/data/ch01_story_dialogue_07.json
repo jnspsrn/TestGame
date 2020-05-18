@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"Fantastic! The door is now unlocked." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"If you ever encounter puzzles, like the recent one…" },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"Always remember to check your database for the info." },
+    "004" : {"name":"Robot", "expression": "neutral", "text":"With that said, let’s go rescue the others." }
+}

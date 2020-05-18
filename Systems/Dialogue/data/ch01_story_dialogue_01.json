@@ -1,0 +1,17 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"Is everyone alright?!" },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"What happened?!" },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"It seems that we have crashed onto the planet we were surveying." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"Sir! We have problems" },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"What is it?" },
+    "006" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, some of the crew members here are injured." },
+    "007" : {"name":"CrewOne", "expression": "neutral", "text":"Also, the Power Reactor has been shut off. Power is limited in the entire ship." },
+    "008" : {"name":"CrewOne", "expression": "neutral", "text":"Some of the doors are not functioning. Crew members in different rooms are currently trapped." },
+    "009" : {"name":"Commander", "expression": "neutral", "text":"Hmmm. We should tend to those injured and rescue those who are trapped." },
+    "010" : {"name":"Commander", "expression": "neutral", "text":"Player, since you’re here, I need you to rescue our comrades." },
+    "011" : {"name":"Commander", "expression": "neutral", "text":"Afterwards, do check on the reactor." },
+    "012" : {"name":"Commander", "expression": "neutral", "text":"Robot, kindly assist the Player in his task." },
+    "013" : {"name":"Robot", "expression": "neutral", "text":"Roger that!" },
+    "014" : {"name":"Robot", "expression": "neutral", "text":"Hello, Player! I will be assisting you throughout your mission." },
+    "015" : {"name":"Robot", "expression": "neutral", "text":"Let’s head outside and rescue those who are trapped." }
+}

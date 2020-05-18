@@ -1,0 +1,11 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, we are now in orbit." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"Follow the shortest route to the target." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"We have a problem with that, sir." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"We will need to pass through a thick asteroid belt." },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"Those asteroids will be a problem if it hits our ship." },
+    "006" : {"name":"Commander", "expression": "neutral", "text":"Do we have enough weapons to intercept any asteroid if any comes close?" },
+    "007" : {"name":"CrewOne", "expression": "neutral", "text":"We might be able to intercept any asteroid from the front but it will be difficult for us to destroy any at our rear." },
+    "008" : {"name":"Commander", "expression": "neutral", "text":"I suppose we need to install more weapons at the back." },
+    "009" : {"name":"Commander", "expression": "neutral", "text":"Player! Head to the Weapon Technician. Tell him we need big guns to be installed at the back." }
+}

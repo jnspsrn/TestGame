@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"Robot", "expression": "neutral", "text":"Kindly read through the text." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"If you are done reading, try to give an input to the door's panel." },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"You may exit the interface by pressing back twice." }
+}

@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Objects/Ship/Workbench.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Armory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Chapter III/ch03_links/a_ss_ch03.tres" type="Resource" id=4]
+[ext_resource path="res://Levels/Chapter III/A_CH03.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Objects/Characters/Player/character_movement_sheet.png" type="Texture" id=6]
+[ext_resource path="res://Levels/Chapter III/Armorer.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 3 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 16 )
+
+[node name="A_CH03" instance=ExtResource( 2 )]
+script = ExtResource( 5 )
+
+[node name="Workbench" parent="." index="3" instance=ExtResource( 1 )]
+position = Vector2( 320, 47 )
+puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+
+[node name="SS_CH03" parent="." index="4" instance=ExtResource( 3 )]
+position = Vector2( 356, 193 )
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/Chapter III/SS_CH03_02.tscn"
+
+[node name="Armorer" type="StaticBody2D" parent="." index="5" groups=[
+"InteractableObject",
+]]
+position = Vector2( 323, 187 )
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Armorer" index="0"]
+texture = ExtResource( 6 )
+vframes = 4
+hframes = 8
+frame = 24
+
+[node name="Collider" type="CollisionShape2D" parent="Armorer" index="1"]
+position = Vector2( 0, 12 )
+shape = SubResource( 1 )
+
+[node name="InteractArea" type="Area2D" parent="Armorer" index="2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="InteractCollider" type="CollisionShape2D" parent="Armorer/InteractArea" index="0"]
+modulate = Color( 0.121569, 0.705882, 0, 1 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Armorer/InteractArea" to="Armorer" method="_on_InteractArea_body_entered"]
+[connection signal="body_exited" from="Armorer/InteractArea" to="Armorer" method="_on_InteractArea_body_exited"]
+
+[editable path="ShipTileset"]

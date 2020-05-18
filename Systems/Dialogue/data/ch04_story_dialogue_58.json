@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, strange creatures have appeared in the mines. They are attacking the extractors." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"The weapons we currently have are not working on them." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"Player, go to the Weapon Technician and upgrade our weapons." }
+}

@@ -1,0 +1,5 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Howdy! There seems to be a problem with the modules in the panels. It prevents us from monitoring the engine." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"We won’t be seeing this ship fly if it doesn’t get fixed." },
+    "003" : {"name":"Robot", "expression": "neutral", "text":"We better get started then." }
+}

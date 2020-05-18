@@ -1,0 +1,4 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Impressive work. We should be able to upgrade the tools now." },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"Report back to the Commander and tell him it’s done." }
+}

@@ -1,0 +1,4 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Fine work you did there. I’ll take care of the rest." },
+    "002" : {"name":"Robot", "expression": "neutral", "text":"Let’s head to the Weapons Tech Room just across this room." }
+}

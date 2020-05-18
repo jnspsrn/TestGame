@@ -1,0 +1,7 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"A processing machine?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"Hmmm. Let me see." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"For this material, we will need to do these." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"Here are the things you need to do on your end." },
+    "005" : {"name":"CrewOne", "expression": "neutral", "text":"Let’s do this fast." }
+}

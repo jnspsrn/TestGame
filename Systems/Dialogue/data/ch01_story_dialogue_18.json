@@ -1,0 +1,9 @@
+{
+    "001" : {"name":"Commander", "expression": "neutral", "text":"I see that you have rescued our comrades. The power is back as well." },
+    "002" : {"name":"Commander", "expression": "neutral", "text":"You have my thanks." },
+    "003" : {"name":"Commander", "expression": "neutral", "text":"I hope no probl-" },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"Sir, the mechanical team reports that the main engine door is malfunctioning probably due to lack of power." },
+    "005" : {"name":"Commander", "expression": "neutral", "text":"I see. Player, we need you to check the Power Controller. Try to restore power to the engine doors." },
+    "006" : {"name":"Robot", "expression": "neutral", "text":"The power controller is located inside the upper left room." },
+    "007" : {"name":"Robot", "expression": "neutral", "text":"Let’s go examine the situation." }
+}

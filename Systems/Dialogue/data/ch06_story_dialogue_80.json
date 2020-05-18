@@ -1,0 +1,8 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Something strange again?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"Let me see." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"Hmmm. This looks like something from the lost expedition’s ship." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"It has 4 layers of security." },
+    "005" : {"name":"CrewOne", "expression": "neutral", "text":"This is going to take a while." },
+    "006" : {"name":"CrewOne", "expression": "neutral", "text":"See what you can do to unlock this." }
+}

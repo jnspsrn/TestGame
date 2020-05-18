@@ -1,0 +1,6 @@
+{
+    "001" : {"name":"CrewOne", "expression": "neutral", "text":"Defenses?" },
+    "002" : {"name":"CrewOne", "expression": "neutral", "text":"With the processed materials, it is doable." },
+    "003" : {"name":"CrewOne", "expression": "neutral", "text":"Here’s a list of the things you need to do." },
+    "004" : {"name":"CrewOne", "expression": "neutral", "text":"Work on this on the bench there." }
+}

@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/ShipSquare.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Chapter II/SS_CH02.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Chapter II/ch02_links/cc_ss_ch02.tres" type="Resource" id=3]
+[ext_resource path="res://World/Waypoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Chapter II/ch02_links/wtr_ss_ch02.tres" type="Resource" id=5]
+[ext_resource path="res://Levels/Chapter II/ch02_links/a_ss_ch02.tres" type="Resource" id=6]
+[ext_resource path="res://Levels/Chapter II/ch02_links/rl_ss_ch02.tres" type="Resource" id=7]
+
+[node name="SS_CH02" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="CC_CH02_Waypoint" parent="." index="2" instance=ExtResource( 4 )]
+position = Vector2( 741, 24 )
+connection = ExtResource( 3 )
+new_level_path = "res://Levels/Chapter II/CC_CH02.tscn"
+
+[node name="WTR_CH02_Waypoint" parent="." index="3" instance=ExtResource( 4 )]
+position = Vector2( 646, 312 )
+connection = ExtResource( 5 )
+new_level_path = "res://Levels/Chapter II/WTR_CH02.tscn"
+
+[node name="RL_CH02_Waypoint" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( 646, -216 )
+connection = ExtResource( 7 )
+new_level_path = "res://Levels/Chapter II/RL_CH02.tscn"
+
+[node name="A_CH02_Waypoint" parent="." index="5" instance=ExtResource( 4 )]
+position = Vector2( 121, 313 )
+rotation = 3.14159
+connection = ExtResource( 6 )
+new_level_path = "res://Levels/Chapter II/A_CH02.tscn"
+
+[editable path="ShipTileset"]
+
+[editable path="Doors/LowerEngineDoor"]
