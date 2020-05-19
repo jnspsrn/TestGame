@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Chapter I/Power/PowerQuestions.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=2]
+
+[node name="PowerQuestions" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.443137, 0.443137, 0.443137, 1 )
+
+[node name="InstructionLabel1" type="Label" parent="." index="2"]
+margin_left = 11.3774
+margin_top = 15.2065
+margin_right = 268.377
+margin_bottom = 46.2065
+text = "Power   is the time rate of expending or 
+absorbing energy."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="LineEdit" parent="InstructionLabel1" index="0"]
+margin_left = 0.440125
+margin_top = -3.08089
+margin_right = 58.4401
+margin_bottom = 20.9191
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLabel2" type="Label" parent="." index="3"]
+margin_left = 11.3774
+margin_top = 63.7226
+margin_right = 268.377
+margin_bottom = 94.7226
+text = "Mathematically, Power is expressed as energy 
+per unit time "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy" type="LineEdit" parent="InstructionLabel2" index="0"]
+margin_left = 251.698
+margin_top = -5.38329
+margin_right = 309.698
+margin_bottom = 18.6167
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="LineEdit" parent="InstructionLabel2" index="1"]
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 99.0
+margin_bottom = 39.0
+rect_scale = Vector2( 0.8, 0.8 )
+
+[node name="WarningLabel" type="Label" parent="." index="4"]
+margin_left = 86.4147
+margin_top = 132.702
+margin_right = 126.415
+margin_bottom = 146.702
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="5"]
+margin_left = 15.7768
+margin_top = 130.84
+margin_right = 72.7768
+margin_bottom = 150.84
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="InstructionLabel1/Power" to="." method="_on_Power_text_entered"]
+[connection signal="text_entered" from="InstructionLabel2/Energy" to="." method="_on_Energy_text_entered"]
+[connection signal="text_entered" from="InstructionLabel2/Time" to="." method="_on_Time_text_entered"]
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]

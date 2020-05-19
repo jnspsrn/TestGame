@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElementFour.gd" type="Script" id=2]
+
+[node name="BasicCircuitElementFour" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="PolarityLabel" parent="." index="6"]
+margin_left = 56.6366
+margin_top = 36.4026
+margin_right = 96.6368
+margin_bottom = 50.4026
+
+[node name="Arrow" parent="." index="8"]
+margin_left = 261.704
+margin_top = 90.7784
+margin_right = 277.704
+margin_bottom = 110.778
+rect_rotation = 180.0
+
+[node name="Arrow2" parent="." index="9"]
+margin_left = 262.474
+margin_top = 121.985
+margin_right = 278.474
+margin_bottom = 141.985
+rect_rotation = 180.0
+[connection signal="pressed" from="Arrow" to="." method="_on_Arrow_pressed"]
+[connection signal="pressed" from="Arrow2" to="." method="_on_Arrow2_pressed"]

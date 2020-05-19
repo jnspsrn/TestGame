@@ -1,0 +1,63 @@
+extends Puzzle
+
+export (bool) var solved
+var doorPanel
+var NodeV1 = false
+var NodeV2 = false
+var V1 = false
+var V2 = false
+
+func _ready():
+	$Submit.visible = false
+	$V1.visible = false
+	$V2.visible = false
+	_add_items()
+	doorPanel = get_parent()
+	if doorPanel.puzzle_solved:
+		solved = true
+		$WarningLabel.visible = true
+		$WarningLabel.text = "Already solved!"
+
+func _add_items():
+	$Equation/NodeV1.add_item("")
+	$Equation/NodeV1.add_item("Node v1")
+	$Equation/NodeV1.add_item("Node v2")
+	$Equation/NodeV2.add_item("")
+	$Equation/NodeV2.add_item("Node v1")
+	$Equation/NodeV2.add_item("Node v2")
+
+func _on_NodeV1_item_selected(id):
+	if id == 1:
+		NodeV1 = true
+		_node_checker()
+
+func _on_NodeV2_item_selected(id):
+	if id == 2:
+		NodeV2 = true
+		_node_checker()
+
+func _node_checker():
+	if NodeV1 == true and NodeV2 == true:
+		$Submit.visible = true
+		$V1.visible = true
+		$V2.visible = true
+		$InstructionLabel.text = "Correct! Now calculate v1 and v2."
+	else: 
+		pass
+
+func _on_V1Answer_text_entered(new_text):
+	if new_text == "9.09":
+		V1 = true
+
+
+func _on_V2Answer_text_entered(new_text):
+	if new_text == "10.91":
+		V2 = true
+
+func _on_Submit_pressed():
+	if V1 == true and V2 == true:
+		$WarningLabel.text = "You are Correct!"
+		solved = true
+		doorPanel.update_puzzle(solved)
+	else:
+		$WarningLabel.text = "Try Again!"

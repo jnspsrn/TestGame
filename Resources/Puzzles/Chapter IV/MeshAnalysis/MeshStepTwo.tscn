@@ -1,0 +1,159 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/Circuit/MeshCircuitStepTwo.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/MeshAnalysis/MeshStepTwo.gd" type="Script" id=3]
+
+[node name="MeshStepTwo" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." index="0"]
+margin_left = -0.698334
+margin_right = -0.698334
+color = Color( 0.427451, 0.423529, 0.423529, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 229.753
+margin_top = 17.4584
+margin_right = 383.753
+margin_bottom = 65.4584
+text = "Complete the 
+equations
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+position = Vector2( 120.498, 58.1045 )
+scale = Vector2( 0.386453, 0.386453 )
+texture = ExtResource( 2 )
+
+[node name="Meshes" type="Node2D" parent="." index="4"]
+
+[node name="MeshA" type="Label" parent="Meshes" index="0"]
+margin_left = 5.14566
+margin_top = 109.529
+margin_right = 55.1457
+margin_bottom = 123.529
+text = "Mesh a: -40 + 2ia+8(ia - ib) = 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshA" type="LineEdit" parent="Meshes/MeshA" index="0"]
+margin_left = 130.204
+margin_top = -0.247971
+margin_right = 218.204
+margin_bottom = 27.752
+rect_min_size = Vector2( 1, 1 )
+rect_scale = Vector2( 0.4, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshB" type="Label" parent="Meshes" index="1"]
+margin_left = 5.14566
+margin_top = 129.066
+margin_right = 199.146
+margin_bottom = 143.066
+text = "Mesh b: 8(ib-ia) + 6ib + 6(ib-ic) = 0 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshB" type="LineEdit" parent="Meshes/MeshB" index="0"]
+margin_left = 163.0
+margin_right = 231.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 1, 1 )
+rect_scale = Vector2( 0.4, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshC" type="Label" parent="Meshes" index="2"]
+margin_left = 5.14566
+margin_top = 147.922
+margin_right = 228.146
+margin_bottom = 161.922
+text = "Mesh c: 6(ic-ib) + 4ic + 20  = 0 "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshC" type="LineEdit" parent="Meshes/MeshC" index="0"]
+margin_left = 146.408
+margin_top = 0.223434
+margin_right = 204.408
+margin_bottom = 24.2234
+rect_min_size = Vector2( 1, 1 )
+rect_scale = Vector2( 0.4, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Currents" type="Node2D" parent="." index="5"]
+
+[node name="Submit" type="Button" parent="Currents" index="0"]
+margin_left = 248.643
+margin_top = 113.131
+margin_right = 305.643
+margin_bottom = 133.131
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ia" type="LineEdit" parent="Currents" index="1"]
+margin_left = 235.34
+margin_top = 83.8005
+margin_right = 293.34
+margin_bottom = 107.8
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+placeholder_text = "ia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ib" type="LineEdit" parent="Currents" index="2"]
+margin_left = 276.054
+margin_top = 83.8005
+margin_right = 334.054
+margin_bottom = 107.8
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+placeholder_text = "ib"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ic" type="LineEdit" parent="Currents" index="3"]
+margin_left = 256.29
+margin_top = 97.7672
+margin_right = 314.29
+margin_bottom = 121.767
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+placeholder_text = "ic"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="Currents" index="4"]
+margin_left = 234.456
+margin_top = 133.09
+margin_right = 274.456
+margin_bottom = 147.09
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="Meshes/MeshA/MeshA" to="." method="_on_MeshA_text_entered"]
+[connection signal="text_entered" from="Meshes/MeshB/MeshB" to="." method="_on_MeshB_text_entered"]
+[connection signal="text_entered" from="Meshes/MeshC/MeshC" to="." method="_on_MeshC_text_entered"]
+[connection signal="pressed" from="Currents/Submit" to="." method="_on_Submit_pressed"]
+[connection signal="text_entered" from="Currents/Ia" to="." method="_on_Ia_text_entered"]
+[connection signal="text_entered" from="Currents/Ib" to="." method="_on_Ib_text_entered"]
+[connection signal="text_entered" from="Currents/Ic" to="." method="_on_Ic_text_entered"]

@@ -1,0 +1,159 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/Elements/Resistor/Resistor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Elements/CircuitNode/CircuitNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/DeltaToWye.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/Resistor2.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/Resistor1.gd" type="Script" id=6]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/Resistor3.gd" type="Script" id=7]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/DeltaToWye.gd" type="Script" id=8]
+
+[node name="DeltaToWye" instance=ExtResource( 3 )]
+script = ExtResource( 8 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.388235, 0.388235, 0.388235, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 11.7325
+margin_top = 6.3175
+margin_right = 308.733
+margin_bottom = 20.3175
+text = "Convert delta circuit to its wye transformation "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 185.915
+margin_top = 155.23
+margin_right = 225.915
+margin_bottom = 169.23
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 117.682
+margin_top = 152.259
+margin_right = 174.682
+margin_bottom = 172.259
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 71.8196, 96.661 )
+scale = Vector2( 0.226318, 0.226318 )
+texture = ExtResource( 4 )
+
+[node name="Resistor1" parent="." index="6" instance=ExtResource( 1 )]
+position = Vector2( 269.665, 81.4249 )
+script = ExtResource( 6 )
+
+[node name="Button" type="Button" parent="Resistor1" index="3"]
+margin_left = -19.6949
+margin_top = -10.9995
+margin_right = 20.3051
+margin_bottom = 9.00053
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Resistor1" index="4"]
+margin_left = -6.48608
+margin_top = -17.1418
+margin_right = 23.5139
+margin_bottom = -3.14178
+text = "R1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resistor2" parent="." index="7" instance=ExtResource( 1 )]
+position = Vector2( 270.264, 113.757 )
+script = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="Resistor2" index="3"]
+margin_left = -19.6949
+margin_top = -10.9995
+margin_right = 20.3051
+margin_bottom = 9.00053
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Resistor2" index="4"]
+margin_left = -6.48608
+margin_top = -17.1418
+margin_right = 23.5139
+margin_bottom = -3.14178
+text = "R2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resistor3" parent="." index="8" instance=ExtResource( 1 )]
+position = Vector2( 268.459, 140.832 )
+script = ExtResource( 7 )
+
+[node name="Button" type="Button" parent="Resistor3" index="3"]
+margin_left = -19.6949
+margin_top = -10.9995
+margin_right = 20.3051
+margin_bottom = 9.00053
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Resistor3" index="4"]
+margin_left = -6.48608
+margin_top = -17.1418
+margin_right = 23.5139
+margin_bottom = -3.14178
+text = "R3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CircuitNode" type="Node2D" parent="." index="9"]
+position = Vector2( 138.216, -13.9128 )
+
+[node name="CircuitNode" parent="CircuitNode" index="0" instance=ExtResource( 2 )]
+position = Vector2( 21.7373, 69.5478 )
+
+[node name="CircuitNode2" parent="CircuitNode" index="1" instance=ExtResource( 2 )]
+position = Vector2( 63.7502, 93.5008 )
+
+[node name="CircuitNode3" parent="CircuitNode" index="2" instance=ExtResource( 2 )]
+position = Vector2( 105.632, 69.5985 )
+
+[node name="CircuitNode4" parent="CircuitNode" index="3" instance=ExtResource( 2 )]
+position = Vector2( 63.827, 141.634 )
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="area_entered" from="Resistor1" to="Resistor1" method="_on_Resistor1_area_entered"]
+[connection signal="area_exited" from="Resistor1" to="Resistor1" method="_on_Resistor1_area_exited"]
+[connection signal="pressed" from="Resistor1/Button" to="Resistor1" method="_on_Button_pressed"]
+[connection signal="area_entered" from="Resistor2" to="Resistor2" method="_on_Resistor2_area_entered"]
+[connection signal="area_exited" from="Resistor2" to="Resistor2" method="_on_Resistor2_area_exited"]
+[connection signal="pressed" from="Resistor2/Button" to="Resistor2" method="_on_Button_pressed"]
+[connection signal="area_entered" from="Resistor3" to="Resistor3" method="_on_Resistor3_area_entered"]
+[connection signal="area_exited" from="Resistor3" to="Resistor3" method="_on_Resistor3_area_exited"]
+[connection signal="pressed" from="Resistor3/Button" to="Resistor3" method="_on_Button_pressed"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode" to="Resistor3" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode2" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode2" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode2" to="Resistor3" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode3" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode3" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode3" to="Resistor3" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode4" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode4" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode/CircuitNode4" to="Resistor3" method="_on_CircuitNode_area_entered"]

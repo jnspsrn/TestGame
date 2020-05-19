@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter II/SourcesQuestions/SuitQuestions.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/SuitUI.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/SuitUITwo.png" type="Texture" id=4]
+
+[node name="SuitQuestions" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.266667, 0.266667, 0.266667, 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+position = Vector2( 156.948, 77.7062 )
+scale = Vector2( 0.307326, 0.307326 )
+texture = ExtResource( 3 )
+
+[node name="Circuit" type="Sprite" parent="." index="3"]
+
+[node name="Sprite2" type="Sprite" parent="." index="4"]
+position = Vector2( 154.707, 159.485 )
+scale = Vector2( 0.207931, 0.207931 )
+texture = ExtResource( 4 )
+
+[node name="Valid" type="Button" parent="." index="5"]
+margin_left = 92.9709
+margin_top = 120.108
+margin_right = 135.971
+margin_bottom = 140.108
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Valid"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Valid2" type="Button" parent="." index="6"]
+margin_left = 188.08
+margin_top = 120.228
+margin_right = 243.08
+margin_bottom = 140.228
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Invalid"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="7"]
+margin_left = 122.513
+margin_top = 154.782
+margin_right = 222.513
+margin_bottom = 168.782
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLabel" type="Label" parent="." index="8"]
+margin_left = 83.3924
+margin_top = 23.6279
+margin_right = 300.392
+margin_bottom = 54.6279
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

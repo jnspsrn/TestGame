@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter II/KCLKCL/FillBlank(KCLKVL).gd" type="Script" id=2]
+
+[node name="FillBlank" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.462745, 0.462745, 0.462745, 1 )
+
+[node name="KCL" type="Label" parent="." index="2"]
+margin_left = 9.26583
+margin_top = 4.63291
+margin_right = 291.266
+margin_bottom = 69.6329
+text = "Kirchhoff's current law: 
+
+The algebraic sum of all the currents at any 
+node in a circuit equals zero. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KVL" type="Label" parent="." index="3"]
+margin_left = 6.94936
+margin_top = 78.7595
+margin_right = 294.949
+margin_bottom = 143.76
+text = "Kirchhoff's voltage law:
+
+The algebraic sum of all the Voltages around 
+any closed path in a circuit equals zero. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="4"]
+margin_left = 11.6835
+margin_top = 151.073
+margin_right = 305.684
+margin_bottom = 173.073
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current" type="LineEdit" parent="." index="5"]
+light_mask = 2
+margin_left = 186.587
+margin_top = 30.124
+margin_right = 244.587
+margin_bottom = 54.124
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voltage" type="LineEdit" parent="." index="6"]
+margin_left = 185.78
+margin_top = 103.314
+margin_right = 243.78
+margin_bottom = 127.314
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="Current" to="." method="_on_Current_text_entered"]
+[connection signal="text_entered" from="Voltage" to="." method="_on_Voltage_text_entered"]

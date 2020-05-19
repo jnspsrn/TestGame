@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/Circuit/InductorEquivalent.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter V/ConductorInductor/InductorEquivalent.gd" type="Script" id=3]
+
+[node name="InductorEquivalent" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.439216, 0.439216, 0.439216, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 11.0
+margin_top = 14.0
+margin_right = 313.0
+margin_bottom = 28.0
+text = "Get the Equivalent Inductance on both Circuits."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 80.3022
+margin_top = 145.288
+margin_right = 120.302
+margin_bottom = 159.288
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 17.4953
+margin_top = 144.628
+margin_right = 74.4953
+margin_bottom = 164.628
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 167.92, 90.724 )
+scale = Vector2( 0.509642, 0.509642 )
+texture = ExtResource( 2 )
+
+[node name="Leq1" type="Label" parent="." index="6"]
+margin_left = 36.4538
+margin_top = 97.5712
+margin_right = 76.4538
+margin_bottom = 111.571
+text = "Leq1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leq1" type="LineEdit" parent="Leq1" index="0"]
+margin_left = 36.3765
+margin_top = -0.836243
+margin_right = 94.3765
+margin_bottom = 23.1638
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="Leq2" type="Label" parent="." index="7"]
+margin_left = 212.435
+margin_top = 121.315
+margin_right = 252.435
+margin_bottom = 135.315
+text = "Leq2:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leq2" type="LineEdit" parent="Leq2" index="0"]
+margin_left = 36.3765
+margin_top = -0.836243
+margin_right = 94.3765
+margin_bottom = 23.1638
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="text_entered" from="Leq1/Leq1" to="." method="_on_Leq1_text_entered"]
+[connection signal="text_entered" from="Leq2/Leq2" to="." method="_on_Leq2_text_entered"]

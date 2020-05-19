@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/Superposition/Superposition.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/SuperpositionTwo.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/SuperpositionOne.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Objects/Circuit/SuperpositionThree.png" type="Texture" id=5]
+
+[node name="Superposition" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.545098, 0.545098, 0.545098, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 6.25681
+margin_top = 4.5504
+margin_right = 46.2568
+margin_bottom = 18.5504
+text = "Using Superposition, turn the current source off."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 217.473
+margin_top = 154.756
+margin_right = 318.473
+margin_bottom = 168.756
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="4"]
+position = Vector2( 158.501, 91.6535 )
+scale = Vector2( 0.406154, 0.406154 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="." index="5"]
+visible = false
+position = Vector2( 158.501, 91.6535 )
+scale = Vector2( 0.406154, 0.406154 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="." index="6"]
+visible = false
+position = Vector2( 158.501, 91.6535 )
+scale = Vector2( 0.406154, 0.406154 )
+texture = ExtResource( 5 )
+
+[node name="CurrentOff" type="Button" parent="." index="7"]
+margin_left = 259.0
+margin_top = 65.0
+margin_right = 292.0
+margin_bottom = 113.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoltageOff" type="Button" parent="." index="8"]
+margin_left = 30.0
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 117.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vo1" type="Label" parent="." index="9"]
+visible = false
+margin_left = 8.02158
+margin_top = 154.365
+margin_right = 48.0216
+margin_bottom = 168.365
+text = "vo':"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vo1" type="LineEdit" parent="Vo1" index="0"]
+margin_left = 26.1648
+margin_right = 84.1648
+margin_bottom = 24.0
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vo2" type="Label" parent="." index="10"]
+visible = false
+margin_left = 81.3108
+margin_top = 154.365
+margin_right = 121.311
+margin_bottom = 168.365
+text = "vo'':"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vo2" type="LineEdit" parent="Vo2" index="0"]
+margin_left = 26.1648
+margin_right = 84.1648
+margin_bottom = 24.0
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vo" type="Label" parent="." index="11"]
+visible = false
+margin_left = 154.308
+margin_top = 154.365
+margin_right = 194.308
+margin_bottom = 168.365
+text = "vo:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vo" type="LineEdit" parent="Vo" index="0"]
+margin_left = 20.325
+margin_right = 78.325
+margin_bottom = 24.0
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CurrentOff" to="." method="_on_CurrentOff_pressed"]
+[connection signal="pressed" from="VoltageOff" to="." method="_on_VoltageOff_pressed"]
+[connection signal="text_entered" from="Vo1/Vo1" to="." method="_on_Vo1_text_entered"]
+[connection signal="text_entered" from="Vo2/Vo2" to="." method="_on_Vo2_text_entered"]
+[connection signal="text_entered" from="Vo/Vo" to="." method="_on_Vo_text_entered"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Chapter II/SourcesQuestions/SuitQuestions.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CurrentSourceOne.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/CurrentSourceValid.png" type="Texture" id=3]
+
+[node name="CurrentSourceOne" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Circuit" parent="." index="3"]
+position = Vector2( 154.38, 76.8569 )
+scale = Vector2( 0.170249, 0.170249 )
+texture = ExtResource( 3 )
+[connection signal="pressed" from="Valid" to="." method="_on_Valid_pressed"]
+[connection signal="pressed" from="Valid2" to="." method="_on_Valid2_pressed"]

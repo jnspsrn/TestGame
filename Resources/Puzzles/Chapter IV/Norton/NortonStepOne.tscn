@@ -1,0 +1,163 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/Circuit/TheveninCircuitThree.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Elements/CurrentSource/CurrentSource.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Elements/CircuitNode/CircuitNode.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Elements/Resistor/Resistor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/Norton/NortonStepOne.gd" type="Script" id=6]
+
+[node name="NortonStepOne" instance=ExtResource( 1 )]
+script = ExtResource( 6 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.431373, 0.423529, 0.423529, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 38.4428
+margin_top = 3.24216
+margin_right = 394.443
+margin_bottom = 51.2422
+text = "Given the Thevenin equivalent circuit.
+Use Source Transformation to get the 
+               Norton Equivalent"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+position = Vector2( 59.8463, 109.346 )
+scale = Vector2( 0.206274, 0.206274 )
+texture = ExtResource( 2 )
+
+[node name="Resistor" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 252.575, 93.2734 )
+
+[node name="Button1" type="Button" parent="Resistor" index="3"]
+margin_left = -16.0
+margin_top = -8.0
+margin_right = 18.0
+margin_bottom = 12.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Resistor" index="4"]
+margin_left = -3.09174
+margin_top = -16.6479
+margin_right = 36.9083
+margin_bottom = -2.64789
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentSource" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 252.924, 69.438 )
+
+[node name="Button2" type="Button" parent="CurrentSource" index="3"]
+margin_left = -15.0
+margin_top = -11.0
+margin_right = 15.0
+margin_bottom = 11.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CurrentSource" index="4"]
+margin_left = -6.45274
+margin_top = -21.8676
+margin_right = 33.5473
+margin_bottom = -7.86765
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="6"]
+margin_left = 233.045
+margin_top = 106.461
+margin_right = 290.045
+margin_bottom = 126.461
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CircuitNode" parent="." index="7" instance=ExtResource( 4 )]
+position = Vector2( 153.161, 67.577 )
+
+[node name="CircuitNode2" parent="." index="8" instance=ExtResource( 4 )]
+position = Vector2( 202.397, 67.577 )
+
+[node name="CircuitNode3" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 153.161, 117.412 )
+
+[node name="CircuitNode4" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 202.389, 117.412 )
+
+[node name="Wire1" type="Line2D" parent="." index="11"]
+width = 1.5
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Wire2" type="Line2D" parent="." index="12"]
+width = 1.5
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="In" type="Label" parent="." index="13"]
+margin_left = 120.033
+margin_top = 149.815
+margin_right = 160.033
+margin_bottom = 163.815
+text = "In:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="In" type="LineEdit" parent="In" index="0"]
+margin_left = 20.0401
+margin_top = -0.403229
+margin_right = 78.0401
+margin_bottom = 23.5968
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rn" type="Label" parent="." index="14"]
+margin_left = 187.794
+margin_top = 149.815
+margin_right = 227.794
+margin_bottom = 163.815
+text = "Rn:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rn" type="LineEdit" parent="Rn" index="0"]
+margin_left = 22.0934
+margin_top = -0.916565
+margin_right = 80.0934
+margin_bottom = 23.0834
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="Resistor" to="." method="_on_Resistor_area_entered"]
+[connection signal="area_exited" from="Resistor" to="." method="_on_Resistor_area_exited"]
+[connection signal="pressed" from="Resistor/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="area_entered" from="CurrentSource" to="." method="_on_CurrentSource_area_entered"]
+[connection signal="area_exited" from="CurrentSource" to="." method="_on_CurrentSource_area_exited"]
+[connection signal="pressed" from="CurrentSource/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="area_entered" from="CircuitNode" to="CurrentSource" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode" to="Resistor" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode2" to="CurrentSource" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode2" to="Resistor" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode3" to="CurrentSource" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode3" to="Resistor" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode4" to="CurrentSource" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode4" to="Resistor" method="_on_CircuitNode_area_entered"]
+[connection signal="text_entered" from="In/In" to="." method="_on_In_text_entered"]
+[connection signal="text_entered" from="Rn/Rn" to="." method="_on_Rn_text_entered"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Chapter II/KVLKCL/WeaponPuzzles.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/weapons.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter II/KVLKCL/KVLKCLOne.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="KVLKVLOne" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+position = Vector2( 124.616, 16.6926 )
+scale = Vector2( 3.75463, 3.75463 )
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+
+[node name="InstructionOne" type="Label" parent="." index="5"]
+margin_left = 77.3701
+margin_top = 54.1059
+margin_right = 268.37
+margin_bottom = 85.1059
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node" type="LineEdit" parent="InstructionOne" index="0"]
+margin_left = 113.096
+margin_top = 15.1668
+margin_right = 171.096
+margin_bottom = 39.1668
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionTwo" type="Label" parent="." index="6"]
+margin_left = 77.3701
+margin_top = 102.162
+margin_right = 359.37
+margin_bottom = 133.162
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current" type="LineEdit" parent="InstructionTwo" index="0"]
+margin_left = 82.6976
+margin_top = 31.6709
+margin_right = 140.698
+margin_bottom = 55.6709
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="7"]
+margin_left = 167.412
+margin_top = 12.1885
+margin_right = 219.412
+margin_bottom = 26.1885
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="InstructionOne/Node" to="." method="_on_Node_text_entered"]
+[connection signal="text_entered" from="InstructionTwo/Current" to="." method="_on_Current_text_entered"]

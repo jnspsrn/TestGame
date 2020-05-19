@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/Circuit/TheveninCircuit.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/Thevenin/TheveninStepOne.gd" type="Script" id=3]
+
+[node name="TheveninStepOne" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.407843, 0.407843, 0.407843, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 41.6077
+margin_top = 3.78252
+margin_right = 287.608
+margin_bottom = 34.7825
+text = "Terminal a and b are open, so vab = v1
+             Get v1 using KCL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 127.063
+margin_top = 149.869
+margin_right = 167.063
+margin_bottom = 163.869
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="4"]
+position = Vector2( 151.784, 92.8597 )
+scale = Vector2( 0.467002, 0.467002 )
+texture = ExtResource( 2 )
+
+[node name="V1" type="Label" parent="." index="5"]
+margin_left = 31.8272
+margin_top = 149.216
+margin_right = 71.8272
+margin_bottom = 163.216
+text = "v1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V1" type="LineEdit" parent="V1" index="0"]
+margin_left = 25.2143
+margin_top = -3.77963
+margin_right = 83.2143
+margin_bottom = 20.2204
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="V1/V1" to="." method="_on_V1_text_entered"]

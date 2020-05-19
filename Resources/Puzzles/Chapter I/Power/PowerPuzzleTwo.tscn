@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/HubUi.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter I/Power/PowerPuzzleTwo.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/PowerProblemTwo.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Puzzle" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.482353, 0.482353, 0.482353, 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+position = Vector2( 159.866, 89.086 )
+scale = Vector2( 0.469, 0.469 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+position = Vector2( 109.675, 111.98 )
+scale = Vector2( 0.467, 0.467 )
+texture = ExtResource( 4 )
+
+[node name="InstructionLabel" type="Label" parent="." index="4"]
+margin_left = 31.5034
+margin_top = 24.3435
+margin_right = 71.5034
+margin_bottom = 38.3435
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="." index="5"]
+margin_left = 226.114
+margin_top = 77.3781
+margin_right = 284.114
+margin_bottom = 101.378
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="6"]
+margin_left = 235.514
+margin_top = 110.791
+margin_right = 275.514
+margin_bottom = 124.791
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]

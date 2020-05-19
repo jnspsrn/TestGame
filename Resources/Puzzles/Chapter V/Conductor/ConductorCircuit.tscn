@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter V/Conductor/ConductorCircuit.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/ConductorCircuit.png" type="Texture" id=3]
+
+[node name="ConductorCircuit" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.415686, 0.415686, 0.415686, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 21.4344
+margin_top = 8.57375
+margin_right = 248.434
+margin_bottom = 22.5737
+text = "With the given information, find i(0)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 146.175
+margin_top = 134.183
+margin_right = 186.175
+margin_bottom = 148.183
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 100.7
+margin_top = 133.95
+margin_right = 157.7
+margin_bottom = 153.95
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 154.193, 113.862 )
+scale = Vector2( 0.509249, 0.509249 )
+texture = ExtResource( 3 )
+
+[node name="Io" type="Label" parent="." index="6"]
+margin_left = 20.577
+margin_top = 134.608
+margin_right = 60.577
+margin_bottom = 148.608
+text = "i(0):"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Io" type="LineEdit" parent="Io" index="0"]
+margin_left = 27.5764
+margin_top = -1.79242
+margin_right = 85.5764
+margin_bottom = 22.2076
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="text_entered" from="Io/Io" to="." method="_on_Io_text_entered"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter V/Conductor/ConductorQuestions.gd" type="Script" id=2]
+
+[node name="ConductorQuestions" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.458824, 0.458824, 0.458824, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 11.8717
+margin_top = 9.07838
+margin_right = 264.872
+margin_bottom = 40.0784
+text = "A capacitor stores power in the form of 
+electric charge"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ElectricCharge" type="LineEdit" parent="InstructionLabel" index="0"]
+margin_left = -1.0
+margin_top = 15.0
+margin_right = 137.0
+margin_bottom = 39.0
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="InstructionLabel2" type="Label" parent="." index="3"]
+margin_left = 11.8717
+margin_top = 53.9268
+margin_right = 303.872
+margin_bottom = 84.9268
+text = "voltage cannot change instantaneously across
+ the terminals of a capacitor. "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voltage" type="LineEdit" parent="InstructionLabel2" index="0"]
+margin_left = -0.612579
+margin_top = -2.38742
+margin_right = 66.3874
+margin_bottom = 21.6126
+rect_scale = Vector2( 0.7, 0.7 )
+
+[node name="InstructionLabel3" type="Label" parent="." index="4"]
+margin_left = 11.8717
+margin_top = 99.0518
+margin_right = 308.872
+margin_bottom = 130.052
+text = "If the voltage across the terminals is constant,
+the capacitor current is zero"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zero" type="LineEdit" parent="InstructionLabel3" index="0"]
+margin_left = 150.736
+margin_top = 14.473
+margin_right = 208.736
+margin_bottom = 38.473
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="5"]
+margin_left = 73.1025
+margin_top = 143.498
+margin_right = 113.103
+margin_bottom = 157.498
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="6"]
+margin_left = 11.7325
+margin_top = 143.498
+margin_right = 68.7325
+margin_bottom = 163.498
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="InstructionLabel/ElectricCharge" to="." method="_on_ElectricCharge_text_entered"]
+[connection signal="text_entered" from="InstructionLabel2/Voltage" to="." method="_on_Voltage_text_entered"]
+[connection signal="text_entered" from="InstructionLabel3/Zero" to="." method="_on_Zero_text_entered"]
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]

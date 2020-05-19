@@ -1,0 +1,144 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter III/SeriesParallel/Series.gd" type="Script" id=2]
+[ext_resource path="res://Objects/Elements/Resistor/Resistor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Elements/CircuitNode/CircuitNode.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/Weapon.png" type="Texture" id=5]
+
+[node name="Series" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.356863, 0.356863, 0.356863, 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+position = Vector2( 191.447, 83.509 )
+scale = Vector2( 0.505, 0.505 )
+texture = ExtResource( 5 )
+
+[node name="InstructionLabel" type="Label" parent="." index="3"]
+margin_left = 74.8041
+margin_top = 32.6582
+margin_right = 256.804
+margin_bottom = 46.6582
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="4"]
+margin_left = 167.77
+margin_top = 8.078
+margin_right = 207.77
+margin_bottom = 22.0781
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resistor1" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 215.878, 86.0684 )
+
+[node name="Button" type="Button" parent="Resistor1" index="3"]
+margin_left = -17.1321
+margin_top = -9.0
+margin_right = 16.8679
+margin_bottom = 11.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Resistor1" index="4"]
+margin_left = -7.22559
+margin_top = -16.3244
+margin_right = 32.7744
+margin_bottom = 14.6756
+text = "R1
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resistor2" parent="." index="6" instance=ExtResource( 3 )]
+position = Vector2( 215.836, 114.735 )
+
+[node name="Button" type="Button" parent="Resistor2" index="3"]
+margin_left = -17.1321
+margin_top = -9.0
+margin_right = 16.8679
+margin_bottom = 11.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Resistor2" index="4"]
+margin_left = -7.22559
+margin_top = -16.3244
+margin_right = 32.7744
+margin_bottom = 14.6756
+text = "R2
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CircuitNode" parent="." index="7" instance=ExtResource( 4 )]
+position = Vector2( 115.253, 70.9616 )
+
+[node name="CircuitNode2" parent="." index="8" instance=ExtResource( 4 )]
+position = Vector2( 164.489, 70.9616 )
+
+[node name="CircuitNode3" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 115.253, 120.796 )
+
+[node name="CircuitNode4" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 164.48, 120.796 )
+
+[node name="Wire1" type="Line2D" parent="." index="11"]
+width = 1.5
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Wire2" type="Line2D" parent="." index="12"]
+width = 1.5
+default_color = Color( 1, 1, 1, 1 )
+
+[node name="Submit" type="Button" parent="." index="13"]
+margin_left = 112.863
+margin_top = 142.737
+margin_right = 169.863
+margin_bottom = 162.737
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Req" type="LineEdit" parent="." index="14"]
+visible = false
+margin_left = 192.742
+margin_top = 97.069
+margin_right = 250.742
+margin_bottom = 121.069
+rect_scale = Vector2( 0.7, 0.7 )
+align = 1
+placeholder_text = "Req"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="area_entered" from="Resistor1" to="." method="_on_Resistor1_area_entered"]
+[connection signal="area_exited" from="Resistor1" to="." method="_on_Resistor1_area_exited"]
+[connection signal="pressed" from="Resistor1/Button" to="Resistor1" method="_on_Button_pressed"]
+[connection signal="area_entered" from="Resistor2" to="." method="_on_Resistor2_area_entered"]
+[connection signal="area_exited" from="Resistor2" to="." method="_on_Resistor2_area_exited"]
+[connection signal="pressed" from="Resistor2/Button" to="Resistor2" method="_on_Button_pressed"]
+[connection signal="area_entered" from="CircuitNode" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode2" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode2" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode3" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode3" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode4" to="Resistor1" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNode4" to="Resistor2" method="_on_CircuitNode_area_entered"]
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="text_entered" from="Req" to="." method="_on_Req_text_entered"]

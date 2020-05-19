@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter I/ChargeVoltageCurrentQuestions/ChargeQuestions.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/Terminal.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[node name="ChargeQuestions" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.345098, 0.345098, 0.345098, 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+position = Vector2( 160.424, 89.9025 )
+scale = Vector2( 0.475702, 0.567183 )
+texture = ExtResource( 3 )
+
+[node name="InstructionLabel1" type="Label" parent="." index="3"]
+margin_left = 21.0
+margin_top = 24.0
+margin_right = 492.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.7, 0.7 )
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bipolar" type="LineEdit" parent="InstructionLabel1" index="0"]
+margin_left = 24.104
+margin_top = 153.224
+margin_right = 82.104
+margin_bottom = 177.224
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+caret_blink = true
+caret_blink_speed = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLabel2" type="Label" parent="." index="4"]
+margin_left = 21.3814
+margin_top = 55.3396
+margin_right = 333.382
+margin_bottom = 86.3396
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voltage" type="LineEdit" parent="InstructionLabel2" index="0"]
+margin_left = 23.6525
+margin_top = 107.795
+margin_right = 81.6529
+margin_bottom = 131.795
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/read_only = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Current" type="LineEdit" parent="InstructionLabel2" index="1"]
+margin_left = 23.6391
+margin_top = 108.465
+margin_right = 81.6391
+margin_bottom = 132.465
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/read_only = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="5"]
+margin_left = 37.6563
+margin_top = 153.631
+margin_right = 77.6563
+margin_bottom = 167.631
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cursor" type="Label" parent="." index="6"]
+margin_left = 23.5564
+margin_top = 132.481
+margin_right = 63.5564
+margin_bottom = 163.481
+rect_scale = Vector2( 0.7, 0.7 )
+text = ">
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="InstructionLabel1/Bipolar" to="." method="_on_Bipolar_text_entered"]
+[connection signal="text_entered" from="InstructionLabel2/Voltage" to="." method="_on_Voltage_text_entered"]
+[connection signal="text_entered" from="InstructionLabel2/Current" to="." method="_on_Current_text_entered"]

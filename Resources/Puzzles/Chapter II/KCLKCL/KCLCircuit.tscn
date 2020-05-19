@@ -1,0 +1,339 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/Circuit/KCLCircuit.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter II/KCLKCL/KCLCircuit.gd" type="Script" id=3]
+
+[node name="KCLCircuit" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.52549, 0.52549, 0.52549, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 2.371
+margin_top = 2.41142
+margin_right = 196.371
+margin_bottom = 40.4114
+text = "Using KCL, sum the current at 
+each node in circuit shown."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 195.0
+margin_top = 151.0
+margin_right = 302.0
+margin_bottom = 175.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 127.063
+margin_top = 153.128
+margin_right = 184.063
+margin_bottom = 173.128
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 93.6598, 119.737 )
+scale = Vector2( 0.323124, 0.323124 )
+texture = ExtResource( 2 )
+
+[node name="NodeA" type="Label" parent="." index="6"]
+margin_left = 201.223
+margin_top = 19.192
+margin_right = 319.223
+margin_bottom = 50.192
+text = "Node A:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="NodeA" index="0"]
+margin_left = -5.69461
+margin_top = 17.3529
+margin_right = 148.305
+margin_bottom = 47.353
+text = "i1 +i4   -i2   - i5  =0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A1" type="LineEdit" parent="NodeA" index="1"]
+margin_left = -13.9231
+margin_top = 16.5649
+margin_right = 44.0769
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A2" type="LineEdit" parent="NodeA" index="2"]
+margin_left = 17.6897
+margin_top = 16.5649
+margin_right = 75.6897
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A3" type="LineEdit" parent="NodeA" index="3"]
+margin_left = 47.6333
+margin_top = 16.5649
+margin_right = 105.633
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A4" type="LineEdit" parent="NodeA" index="4"]
+margin_left = 76.5157
+margin_top = 16.5649
+margin_right = 134.516
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeB" type="Label" parent="." index="7"]
+margin_left = 200.56
+margin_top = 49.046
+margin_right = 318.56
+margin_bottom = 80.046
+text = "Node B:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="NodeB" index="0"]
+margin_left = -41.4584
+margin_top = 16.8402
+margin_right = 116.542
+margin_bottom = 46.8402
+text = "i2  + i3  - i1  - ib   -ia   =0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B1" type="LineEdit" parent="NodeB" index="1"]
+margin_left = -44.5894
+margin_top = 16.5649
+margin_right = 13.4106
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B2" type="LineEdit" parent="NodeB" index="2"]
+margin_left = -13.6298
+margin_top = 16.5649
+margin_right = 44.3702
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B3" type="LineEdit" parent="NodeB" index="3"]
+margin_left = 16.3341
+margin_top = 16.5649
+margin_right = 74.3341
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B4" type="LineEdit" parent="NodeB" index="4"]
+margin_left = 45.8258
+margin_top = 16.5649
+margin_right = 103.826
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B5" type="LineEdit" parent="NodeB" index="5"]
+margin_left = 77.8039
+margin_top = 16.5649
+margin_right = 135.804
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeC" type="Label" parent="." index="8"]
+margin_left = 201.223
+margin_top = 79.0658
+margin_right = 319.223
+margin_bottom = 110.066
+text = "Node C:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="NodeC" index="0"]
+margin_left = -5.69461
+margin_top = 17.3529
+margin_right = 148.305
+margin_bottom = 47.353
+text = "ib - i3   -i4   - ic  =0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C1" type="LineEdit" parent="NodeC" index="1"]
+margin_left = -13.9231
+margin_top = 16.5649
+margin_right = 44.0769
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C2" type="LineEdit" parent="NodeC" index="2"]
+margin_left = 17.6897
+margin_top = 16.5649
+margin_right = 75.6897
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C3" type="LineEdit" parent="NodeC" index="3"]
+margin_left = 47.6333
+margin_top = 16.5649
+margin_right = 105.633
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C4" type="LineEdit" parent="NodeC" index="4"]
+margin_left = 76.5157
+margin_top = 16.5649
+margin_right = 134.516
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeD" type="Label" parent="." index="9"]
+margin_left = 201.223
+margin_top = 110.38
+margin_right = 319.223
+margin_bottom = 141.38
+text = "Node D:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="NodeD" index="0"]
+margin_left = 19.5154
+margin_top = 17.353
+margin_right = 173.515
+margin_bottom = 47.353
+text = "i5  +ia   + ic  =0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D1" type="LineEdit" parent="NodeD" index="1"]
+margin_left = 15.7485
+margin_top = 16.5649
+margin_right = 73.7485
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D2" type="LineEdit" parent="NodeD" index="2"]
+margin_left = 46.9863
+margin_top = 16.5649
+margin_right = 104.986
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D3" type="LineEdit" parent="NodeD" index="3"]
+margin_left = 78.1334
+margin_top = 16.5649
+margin_right = 136.133
+margin_bottom = 40.5649
+rect_min_size = Vector2( 3, 4 )
+rect_scale = Vector2( 0.4, 0.5 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="text_entered" from="NodeA/A1" to="." method="_on_A1_text_entered"]
+[connection signal="text_entered" from="NodeA/A2" to="." method="_on_A2_text_entered"]
+[connection signal="text_entered" from="NodeA/A3" to="." method="_on_A3_text_entered"]
+[connection signal="text_entered" from="NodeA/A4" to="." method="_on_A4_text_entered"]
+[connection signal="text_entered" from="NodeB/B1" to="." method="_on_B1_text_entered"]
+[connection signal="text_entered" from="NodeB/B2" to="." method="_on_B2_text_entered"]
+[connection signal="text_entered" from="NodeB/B3" to="." method="_on_B3_text_entered"]
+[connection signal="text_entered" from="NodeB/B4" to="." method="_on_B4_text_entered"]
+[connection signal="text_entered" from="NodeB/B5" to="." method="_on_B5_text_entered"]
+[connection signal="text_entered" from="NodeC/C1" to="." method="_on_C1_text_entered"]
+[connection signal="text_entered" from="NodeC/C2" to="." method="_on_C2_text_entered"]
+[connection signal="text_entered" from="NodeC/C3" to="." method="_on_C3_text_entered"]
+[connection signal="text_entered" from="NodeC/C4" to="." method="_on_C4_text_entered"]
+[connection signal="text_entered" from="NodeD/D1" to="." method="_on_D1_text_entered"]
+[connection signal="text_entered" from="NodeD/D2" to="." method="_on_D2_text_entered"]
+[connection signal="text_entered" from="NodeD/D3" to="." method="_on_D3_text_entered"]

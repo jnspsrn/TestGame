@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Objects/Circuit/InductorCircuit.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter V/Inductor/InductorCircuit.gd" type="Script" id=3]
+
+[node name="InductorCircuit" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.494118, 0.494118, 0.494118, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 13.1722
+margin_top = 7.18484
+margin_right = 309.172
+margin_bottom = 21.1848
+text = "With the given information, find v(0) and Pmax"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 220.937
+margin_top = 154.968
+margin_right = 260.937
+margin_bottom = 168.968
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 177.133
+margin_top = 155.24
+margin_right = 234.133
+margin_bottom = 175.24
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 154.271, 87.9652 )
+scale = Vector2( 0.466063, 0.466063 )
+texture = ExtResource( 2 )
+
+[node name="Vo" type="Label" parent="." index="6"]
+margin_left = 9.53651
+margin_top = 155.462
+margin_right = 49.5365
+margin_bottom = 169.462
+text = "v(0):"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vo" type="LineEdit" parent="Vo" index="0"]
+margin_left = 30.3859
+margin_top = -1.13759
+margin_right = 88.3859
+margin_bottom = 22.8624
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pmax" type="Label" parent="." index="7"]
+margin_left = 89.4545
+margin_top = 155.462
+margin_right = 129.455
+margin_bottom = 169.462
+text = "Pmax:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pmax" type="LineEdit" parent="Pmax" index="0"]
+margin_left = 43.6543
+margin_top = -1.13759
+margin_right = 101.654
+margin_bottom = 22.8624
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="text_entered" from="Vo/Vo" to="." method="_on_Vo_text_entered"]
+[connection signal="text_entered" from="Pmax/Pmax" to="." method="_on_Pmax_text_entered"]

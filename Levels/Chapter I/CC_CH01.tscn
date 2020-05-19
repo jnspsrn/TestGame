@@ -17,11 +17,11 @@ script = ExtResource( 3 )
 
 [node name="DoorPanel" parent="ShipSquareDoor" index="4"]
 script = ExtResource( 7 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/ChargeVoltageCurrentQuestions/ChargeQuestionsThree.tscn"
 
 [node name="DoorPanel" parent="PowerControlDoor" index="4"]
 script = ExtResource( 4 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/ChargeVoltageCurrentQuestions/ChargeQuestions.tscn"
 
 [node name="Waypoint" parent="." index="3"]
 connection = ExtResource( 2 )
@@ -33,7 +33,7 @@ puzzlePath = "res://Resources/Puzzles/Chapter I/Charge-Voltage-Current/QVI-Quest
 
 [node name="DoorPanel" parent="DataCenterDoor" index="4"]
 script = ExtResource( 6 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/ChargeVoltageCurrentQuestions/ChargeQuestionsTwo.tscn"
 
 [node name="Events" type="Node2D" parent="." index="7"]
 

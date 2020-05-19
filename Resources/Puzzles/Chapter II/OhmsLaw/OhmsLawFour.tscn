@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter II/OhmsLaw/OhmsLawFour.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/HubUi.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/OhmsLawTwo.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="OhmsLawFour" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.380392, 0.380392, 0.380392, 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+position = Vector2( 159.866, 89.086 )
+scale = Vector2( 0.469, 0.469 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+position = Vector2( 118.366, 115.215 )
+scale = Vector2( 0.525, 0.525 )
+texture = ExtResource( 4 )
+hframes = 2
+frame = 1
+
+[node name="InstructionLabel" type="Label" parent="." index="4"]
+margin_left = 62.951
+margin_top = 26.58
+margin_right = 102.951
+margin_bottom = 40.58
+rect_pivot_offset = Vector2( 864.474, 287.051 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="5"]
+margin_left = 234.919
+margin_top = 111.919
+margin_right = 274.919
+margin_bottom = 125.919
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResistorA" type="LineEdit" parent="." index="6"]
+margin_left = 227.806
+margin_top = 77.672
+margin_right = 285.806
+margin_bottom = 101.672
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="ResistorA" to="." method="_on_ResistorA_text_entered"]

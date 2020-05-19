@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter II/DependentSource/DependentSource.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/DependentSource.png" type="Texture" id=3]
+
+[node name="DependentSource" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.415686, 0.415686, 0.415686, 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+position = Vector2( 102.067, 87.4941 )
+scale = Vector2( 0.332381, 0.332381 )
+texture = ExtResource( 3 )
+
+[node name="InstructionLabel" type="Label" parent="." index="3"]
+margin_left = 176.7
+margin_top = 15.2
+margin_right = 447.7
+margin_bottom = 63.2
+text = "What value of a is
+required in order for 
+the circuit to be valid? "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="4"]
+margin_left = 200.45
+margin_top = 121.6
+margin_right = 312.45
+margin_bottom = 135.6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A" type="LineEdit" parent="." index="5"]
+margin_left = 218.5
+margin_top = 86.45
+margin_right = 276.5
+margin_bottom = 110.45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="A" to="." method="_on_A_text_entered"]

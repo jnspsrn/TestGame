@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter II/SourcesQuestions/CurrentSourceQuestions.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/CurrentSourceValid.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/CurrentSourceInvalid.png" type="Texture" id=4]
+
+[node name="CurrentSourceQuestions" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.439216, 0.439216, 0.439216, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 47.781
+margin_top = 4.41055
+margin_right = 264.781
+margin_bottom = 35.4106
+text = "Identify if circuit is valid or invalid
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 114.674
+margin_top = 161.72
+margin_right = 217.674
+margin_bottom = 192.72
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 139.667
+margin_top = 141.138
+margin_right = 196.667
+margin_bottom = 161.138
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 79.0807, 80.7097 )
+scale = Vector2( 0.249368, 0.249368 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="." index="6"]
+position = Vector2( 233.769, 81.1194 )
+scale = Vector2( 0.23713, 0.23713 )
+texture = ExtResource( 3 )
+
+[node name="Valid" type="LineEdit" parent="." index="7"]
+margin_left = 213.689
+margin_top = 140.523
+margin_right = 271.689
+margin_bottom = 164.523
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Invalid" type="LineEdit" parent="." index="8"]
+margin_left = 60.0406
+margin_top = 140.523
+margin_right = 118.041
+margin_bottom = 164.523
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="text_entered" from="Valid" to="." method="_on_Valid_text_entered"]
+[connection signal="text_entered" from="Invalid" to="." method="_on_Invalid_text_entered"]

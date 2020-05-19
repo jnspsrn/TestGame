@@ -9,6 +9,26 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "CircuitElement",
+"language": "GDScript",
+"path": "res://Objects/Elements/CircuitElement.gd"
+}, {
+"base": "Puzzle",
+"class": "CircuitElementPuzzle",
+"language": "GDScript",
+"path": "res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElement.gd"
+}, {
+"base": "Area2D",
+"class": "CircuitNode",
+"language": "GDScript",
+"path": "res://Objects/Elements/CircuitNode/CircuitNode.gd"
+}, {
+"base": "CircuitElement",
+"class": "CurrentSource",
+"language": "GDScript",
+"path": "res://Objects/Elements/CurrentSource/CurrentSource.gd"
+}, {
 "base": "Control",
 "class": "DialogueBox",
 "language": "GDScript",
@@ -39,6 +59,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Objects/InteractableObject.gd"
 }, {
+"base": "Area2D",
+"class": "MeshCircuit",
+"language": "GDScript",
+"path": "res://Resources/Puzzles/Chapter IV/MeshAnalysis/MeshCircuit.gd"
+}, {
+"base": "Area2D",
+"class": "NodalCircuit",
+"language": "GDScript",
+"path": "res://Resources/Puzzles/Chapter IV/NodalAnalysis/NodalOne.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -54,22 +84,46 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Objects/PuzzleObject.gd"
 }, {
+"base": "CircuitElement",
+"class": "Resistor",
+"language": "GDScript",
+"path": "res://Objects/Elements/Resistor/Resistor.gd"
+}, {
 "base": "Puzzle",
 "class": "ResistorPuzzle",
 "language": "GDScript",
 "path": "res://Resources/Puzzles/ResistorPuzzle.gd"
+}, {
+"base": "Puzzle",
+"class": "SuitPuzzle",
+"language": "GDScript",
+"path": "res://Resources/Puzzles/Chapter II/SourcesQuestions/SuitQuestions.gd"
+}, {
+"base": "Puzzle",
+"class": "WeaponPuzzles",
+"language": "GDScript",
+"path": "res://Resources/Puzzles/Chapter II/KVLKCL/WeaponPuzzles.gd"
 } ]
 _global_script_class_icons={
+"CircuitElement": "",
+"CircuitElementPuzzle": "",
+"CircuitNode": "",
+"CurrentSource": "",
 "DialogueBox": "",
 "DialoguePlayer": "",
 "DialoguePrompt": "",
 "Door": "",
 "EventPrompt": "",
 "InteractableObject": "",
+"MeshCircuit": "",
+"NodalCircuit": "",
 "Player": "",
 "Puzzle": "",
 "PuzzleObject": "",
-"ResistorPuzzle": ""
+"Resistor": "",
+"ResistorPuzzle": "",
+"SuitPuzzle": "",
+"WeaponPuzzles": ""
 }
 
 [application]

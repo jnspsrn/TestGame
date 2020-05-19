@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Chapter II/KVLKCL/WeaponPuzzles.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter II/KVLKCL/KVLKCLTwo.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/weapons.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[node name="WeaponPuzzles" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+position = Vector2( 124.616, 16.693 )
+scale = Vector2( 3.755, 3.755 )
+texture = ExtResource( 3 )
+vframes = 2
+hframes = 2
+
+[node name="InstructionOne" type="Label" parent="." index="5"]
+margin_left = 77.37
+margin_top = 54.106
+margin_right = 117.37
+margin_bottom = 68.106
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loop" type="LineEdit" parent="InstructionOne" index="0"]
+margin_left = 144.063
+margin_top = 31.8058
+margin_right = 202.063
+margin_bottom = 55.8058
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/read_only = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionTwo" type="Label" parent="." index="6"]
+margin_left = 77.37
+margin_top = 102.162
+margin_right = 117.37
+margin_bottom = 116.162
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Voltage" type="LineEdit" parent="InstructionTwo" index="0"]
+margin_left = 152.789
+margin_top = 31.5007
+margin_right = 210.789
+margin_bottom = 55.5007
+rect_scale = Vector2( 0.8, 0.8 )
+custom_styles/read_only = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="7"]
+margin_left = 167.412
+margin_top = 12.188
+margin_right = 207.412
+margin_bottom = 26.188
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="InstructionOne/Loop" to="." method="_on_Loop_text_entered"]
+[connection signal="text_entered" from="InstructionTwo/Voltage" to="." method="_on_Voltage_text_entered"]

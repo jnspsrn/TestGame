@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/Thevenin/TheveninStepTwo.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/TheveninCircuitTwo.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/TheveninCircuitThree.png" type="Texture" id=4]
+
+[node name="TheveninStepTwo" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.47451, 0.47451, 0.47451, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 32.9373
+margin_top = 2.26577
+margin_right = 296.937
+margin_bottom = 33.2658
+text = "We place a short circuit to get isc and v2.
+Use KCL to get v2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+position = Vector2( 157.245, 93.5745 )
+scale = Vector2( 0.424506, 0.424506 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="." index="4"]
+visible = false
+position = Vector2( 155.694, 79.8632 )
+scale = Vector2( 0.224312, 0.224312 )
+texture = ExtResource( 4 )
+
+[node name="V2" type="Label" parent="." index="5"]
+margin_left = 12.0
+margin_top = 150.0
+margin_right = 51.0
+margin_bottom = 164.0
+text = "v2:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V2" type="LineEdit" parent="V2" index="0"]
+margin_left = 24.4418
+margin_top = -4.88832
+margin_right = 82.4418
+margin_bottom = 19.1117
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Isc" type="Label" parent="." index="6"]
+visible = false
+margin_left = 102.416
+margin_top = 150.0
+margin_right = 141.416
+margin_bottom = 164.0
+text = "isc:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Isc" type="LineEdit" parent="Isc" index="0"]
+margin_left = 27.5769
+margin_top = -4.88832
+margin_right = 85.5769
+margin_bottom = 19.1117
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rth" type="Label" parent="." index="7"]
+visible = false
+margin_left = 198.442
+margin_top = 150.0
+margin_right = 237.442
+margin_bottom = 164.0
+text = "Rth:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rth" type="LineEdit" parent="Rth" index="0"]
+margin_left = 27.5769
+margin_top = -4.88832
+margin_right = 85.5769
+margin_bottom = 19.1117
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="V2/V2" to="." method="_on_V2_text_entered"]
+[connection signal="text_entered" from="Isc/Isc" to="." method="_on_Isc_text_entered"]
+[connection signal="text_entered" from="Rth/Rth" to="." method="_on_Rth_text_entered"]

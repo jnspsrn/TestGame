@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/NodalAnalysis/NodalStepTwo.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/NodalStepTwo.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/NodalEquations.png" type="Texture" id=4]
+
+[node name="NodalStepTwo" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+margin_left = -0.857376
+margin_right = -0.857361
+color = Color( 0.529412, 0.529412, 0.529412, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 15.0862
+margin_top = 4.86324
+margin_right = 261.086
+margin_bottom = 35.8632
+text = "Identify which node the equations are 
+generated from."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 170.039
+margin_top = 151.467
+margin_right = 297.039
+margin_bottom = 174.467
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 122.907
+margin_top = 151.539
+margin_right = 179.907
+margin_bottom = 171.539
+rect_scale = Vector2( 0.7, 0.7 )
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equation" type="Node2D" parent="." index="5"]
+
+[node name="Sprite2" type="Sprite" parent="Equation" index="0"]
+position = Vector2( 248.226, 106.657 )
+scale = Vector2( 0.261089, 0.261089 )
+texture = ExtResource( 4 )
+
+[node name="NodeV1" type="OptionButton" parent="Equation" index="1"]
+margin_left = 178.985
+margin_top = 37.4216
+margin_right = 261.985
+margin_bottom = 57.4216
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NodeV2" type="OptionButton" parent="Equation" index="2"]
+margin_left = 178.985
+margin_top = 101.795
+margin_right = 261.985
+margin_bottom = 121.795
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="6"]
+position = Vector2( 92.0302, 88.8102 )
+scale = Vector2( 0.292447, 0.292447 )
+texture = ExtResource( 3 )
+
+[node name="V1" type="Label" parent="." index="7"]
+margin_left = 15.4369
+margin_top = 135.992
+margin_right = 55.4369
+margin_bottom = 149.992
+text = "V1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V1Answer" type="LineEdit" parent="V1" index="0"]
+margin_left = 3.67444
+margin_top = 14.8534
+margin_right = 61.6744
+margin_bottom = 38.8534
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V2" type="Label" parent="." index="8"]
+margin_left = 70.7612
+margin_top = 135.992
+margin_right = 110.761
+margin_bottom = 149.992
+text = "V2:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V2Answer" type="LineEdit" parent="V2" index="0"]
+margin_left = 3.67444
+margin_top = 14.8534
+margin_right = 61.6744
+margin_bottom = 38.8534
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="item_selected" from="Equation/NodeV1" to="." method="_on_NodeV1_item_selected"]
+[connection signal="item_selected" from="Equation/NodeV2" to="." method="_on_NodeV2_item_selected"]
+[connection signal="text_entered" from="V1/V1Answer" to="." method="_on_V1Answer_text_entered"]
+[connection signal="text_entered" from="V2/V2Answer" to="." method="_on_V2Answer_text_entered"]

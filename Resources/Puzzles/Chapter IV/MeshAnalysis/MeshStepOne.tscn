@@ -1,0 +1,163 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/MeshAnalysis/MeshStepOne.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/Circuit/MeshCircuit.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Elements/Loop/Loop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Puzzles/Chapter IV/MeshAnalysis/MeshCircuit.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.9362, 34.3849 )
+
+[node name="MeshStepOne" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+margin_left = -0.698364
+margin_right = -0.698364
+color = Color( 0.447059, 0.435294, 0.435294, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 5.58675
+margin_top = 2.79335
+margin_right = 315.587
+margin_bottom = 33.7934
+text = "How many branches and essential nodes 
+in the Circuit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 199.0
+margin_top = 150.0
+margin_right = 274.0
+margin_bottom = 171.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeshCircuit" type="Area2D" parent="." index="4"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="MeshCircuit" index="0"]
+position = Vector2( 157.028, 90.2907 )
+scale = Vector2( 0.408065, 0.408065 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeshCircuit" index="1"]
+position = Vector2( 81.7056, 92.8791 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MeshCircuit" index="2"]
+position = Vector2( 162.015, 92.8791 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MeshCircuit" index="3"]
+position = Vector2( 233.245, 92.8791 )
+shape = SubResource( 1 )
+
+[node name="Branches" type="Label" parent="." index="5"]
+margin_left = 9.77674
+margin_top = 152.071
+margin_right = 49.7767
+margin_bottom = 166.071
+text = "Branches:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seven" type="LineEdit" parent="Branches" index="0"]
+margin_left = 65.2748
+margin_top = -2.34453
+margin_right = 123.275
+margin_bottom = 21.6555
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nodes" type="Label" parent="." index="6"]
+margin_left = 124.252
+margin_top = 152.071
+margin_right = 169.252
+margin_bottom = 166.071
+text = "Nodes:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Five" type="LineEdit" parent="Nodes" index="0"]
+margin_left = 47.3078
+margin_top = -2.34453
+margin_right = 105.308
+margin_bottom = 21.6555
+rect_scale = Vector2( 0.8, 0.8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loop" parent="." index="7" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 99.49, 158.84 )
+
+[node name="Button" type="Button" parent="Loop" index="3"]
+margin_left = -15.0
+margin_top = -15.0
+margin_right = 15.0
+margin_bottom = 16.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loop2" parent="." index="8" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 137.2, 158.84 )
+
+[node name="Button" type="Button" parent="Loop2" index="3"]
+margin_left = -15.0
+margin_top = -15.0
+margin_right = 15.0
+margin_bottom = 16.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loop3" parent="." index="9" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 176.307, 158.84 )
+
+[node name="Button" type="Button" parent="Loop3" index="3"]
+margin_left = -15.0
+margin_top = -15.0
+margin_right = 15.0
+margin_bottom = 16.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="10"]
+visible = false
+margin_left = 10.4751
+margin_top = 147.349
+margin_right = 67.4751
+margin_bottom = 167.349
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="Branches/Seven" to="." method="_on_Seven_text_entered"]
+[connection signal="text_entered" from="Nodes/Five" to="." method="_on_Five_text_entered"]
+[connection signal="area_entered" from="Loop" to="." method="_on_Loop_area_entered"]
+[connection signal="area_exited" from="Loop" to="." method="_on_Loop_area_exited"]
+[connection signal="pressed" from="Loop/Button" to="Loop" method="_on_Button_pressed"]
+[connection signal="area_entered" from="Loop2" to="." method="_on_Loop2_area_entered"]
+[connection signal="area_exited" from="Loop2" to="." method="_on_Loop2_area_exited"]
+[connection signal="pressed" from="Loop2/Button" to="Loop2" method="_on_Button_pressed"]
+[connection signal="area_entered" from="Loop3" to="." method="_on_Loop3_area_entered"]
+[connection signal="area_exited" from="Loop3" to="." method="_on_Loop3_area_exited"]
+[connection signal="pressed" from="Loop3/Button" to="Loop3" method="_on_Button_pressed"]
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]

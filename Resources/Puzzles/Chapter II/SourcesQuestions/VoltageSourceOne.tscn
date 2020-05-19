@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Objects/Circuit/VoltageSourceValid.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter II/SourcesQuestions/SuitQuestions.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Puzzles/Chapter II/SourcesQuestions/VoltageSourceOne.gd" type="Script" id=3]
+
+[node name="VoltageSourceOne" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="Circuit" parent="." index="3"]
+position = Vector2( 156.08, 79.5362 )
+scale = Vector2( 0.197274, 0.197274 )
+texture = ExtResource( 1 )
+[connection signal="pressed" from="Valid" to="." method="_on_Valid_pressed"]
+[connection signal="pressed" from="Valid2" to="." method="_on_Valid2_pressed"]

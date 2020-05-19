@@ -1,0 +1,156 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/WyeToDelta.gd" type="Script" id=2]
+[ext_resource path="res://Objects/Elements/Resistor/Resistor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/ResistorB.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/ResistorA.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Puzzles/Chapter III/WyeDelta/ResistorC.gd" type="Script" id=6]
+[ext_resource path="res://Objects/Elements/CircuitNode/CircuitNode.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Objects/Circuit/WyeToDelta.png" type="Texture" id=8]
+
+[node name="WyeToDelta" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.54902, 0.54902, 0.54902, 1 )
+
+[node name="InstructionLabel" type="Label" parent="." index="2"]
+margin_left = 15.0
+margin_top = 6.0
+margin_right = 316.0
+margin_bottom = 20.0
+text = "Convert wye circuit to its delta transformation"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="3"]
+margin_left = 185.0
+margin_top = 157.0
+margin_right = 225.0
+margin_bottom = 171.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="4"]
+margin_left = 121.0
+margin_top = 154.0
+margin_right = 178.0
+margin_bottom = 174.0
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 79.4919, 100.984 )
+scale = Vector2( 0.247677, 0.247677 )
+texture = ExtResource( 8 )
+
+[node name="ResistorA" parent="." index="6" instance=ExtResource( 3 )]
+position = Vector2( 273.125, 78.7747 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="ResistorA" index="3"]
+margin_left = -15.0
+margin_top = -10.0
+margin_right = 16.0
+margin_bottom = 10.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResistorA" index="4"]
+margin_left = -5.85211
+margin_top = -16.0933
+margin_right = 34.1479
+margin_bottom = -2.09328
+text = "Ra"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResistorB" parent="." index="7" instance=ExtResource( 3 )]
+position = Vector2( 272.217, 111.437 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 4 )
+
+[node name="Button" type="Button" parent="ResistorB" index="3"]
+margin_left = -15.0
+margin_top = -10.0
+margin_right = 16.0
+margin_bottom = 10.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResistorB" index="4"]
+margin_left = -5.85211
+margin_top = -16.0933
+margin_right = 34.1479
+margin_bottom = -2.09328
+text = "Rb"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResistorC" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 272.975, 143.158 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 6 )
+
+[node name="Button" type="Button" parent="ResistorC" index="3"]
+margin_left = -15.0
+margin_top = -10.0
+margin_right = 16.0
+margin_bottom = 10.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ResistorC" index="4"]
+margin_left = -5.85211
+margin_top = -16.0933
+margin_right = 34.1479
+margin_bottom = -2.09328
+text = "Rc"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CircuitNodes" type="Node2D" parent="." index="9"]
+position = Vector2( 130.445, -2.67224 )
+
+[node name="CircuitNode" parent="CircuitNodes" index="0" instance=ExtResource( 7 )]
+position = Vector2( 25.5057, 56.1417 )
+
+[node name="CircuitNode2" parent="CircuitNodes" index="1" instance=ExtResource( 7 )]
+position = Vector2( 97.048, 56.1663 )
+
+[node name="CircuitNode3" parent="CircuitNodes" index="2" instance=ExtResource( 7 )]
+position = Vector2( 61.5337, 117.722 )
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="area_entered" from="ResistorA" to="ResistorA" method="_on_ResistorA_area_entered"]
+[connection signal="area_exited" from="ResistorA" to="ResistorA" method="_on_ResistorA_area_exited"]
+[connection signal="pressed" from="ResistorA/Button" to="ResistorA" method="_on_Button_pressed"]
+[connection signal="area_entered" from="ResistorB" to="ResistorB" method="_on_ResistorB_area_entered"]
+[connection signal="area_exited" from="ResistorB" to="ResistorB" method="_on_ResistorB_area_exited"]
+[connection signal="pressed" from="ResistorB/Button" to="ResistorB" method="_on_Button_pressed"]
+[connection signal="area_entered" from="ResistorC" to="ResistorC" method="_on_ResistorC_area_entered"]
+[connection signal="area_exited" from="ResistorC" to="ResistorC" method="_on_ResistorC_area_exited"]
+[connection signal="pressed" from="ResistorC/Button" to="ResistorC" method="_on_Button_pressed"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode" to="ResistorA" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode" to="ResistorB" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode" to="ResistorC" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode2" to="ResistorA" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode2" to="ResistorB" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode2" to="ResistorC" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode3" to="ResistorA" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode3" to="ResistorB" method="_on_CircuitNode_area_entered"]
+[connection signal="area_entered" from="CircuitNodes/CircuitNode3" to="ResistorC" method="_on_CircuitNode_area_entered"]
