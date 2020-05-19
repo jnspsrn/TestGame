@@ -17,16 +17,16 @@ extents = Vector2( 24, 16 )
 script = ExtResource( 4 )
 
 [node name="SDS_01" parent="SuitDockingStations" index="0"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/OhmsLaw/OhmsLaw.tscn"
 
 [node name="SDS_02" parent="SuitDockingStations" index="1"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/OhmsLaw/OhmsLawTwo.tscn"
 
 [node name="SDS_03" parent="SuitDockingStations" index="2"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/OhmsLaw/OhmsLawThree.tscn"
 
 [node name="SDS_04" parent="SuitDockingStations" index="3"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/OhmsLaw/OhmsLawFour.tscn"
 
 [node name="SDS_05" parent="SuitDockingStations" index="4"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"

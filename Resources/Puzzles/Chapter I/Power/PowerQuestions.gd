@@ -2,8 +2,11 @@ extends Puzzle
 
 var Energy = false
 var Time = false
+var puzzleObject
+ 
 
 func _ready():
+	puzzleObject = get_parent()
 	$InstructionLabel2.visible = false
 	pass
 
@@ -22,6 +25,7 @@ func _on_Time_text_entered(new_text):
 
 func _on_Submit_pressed():
 	if Time == true and Energy == true:
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
 	else:
 		$WarningLabel.text = "Try Again!" 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/Puzzles/Chapter III/CurrentDivder/CurrentDivider.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Objects/Circuit/CurrentDivider.png" type="Texture" id=3]
 [ext_resource path="res://Resources/Objects/Circuit/plus.png" type="Texture" id=4]
 [ext_resource path="res://Resources/Objects/Circuit/minus.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/HubUi.png" type="Texture" id=6]
 
 [node name="CurrentDivider" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
@@ -12,54 +13,59 @@ script = ExtResource( 1 )
 [node name="Background" parent="." index="0"]
 color = Color( 0.380392, 0.380392, 0.380392, 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="2"]
-position = Vector2( 169.593, 99.7256 )
-scale = Vector2( 0.388192, 0.388192 )
-texture = ExtResource( 3 )
+[node name="Sprite2" type="Sprite" parent="." index="2"]
+position = Vector2( 165.451, 89.7289 )
+scale = Vector2( 0.456371, 0.456371 )
+texture = ExtResource( 6 )
 
 [node name="InstructionLabel" type="Label" parent="." index="3"]
-margin_left = 13.0
-margin_top = 6.0
-margin_right = 291.0
-margin_bottom = 37.0
-text = "Adjust the value of the Resistors to get the 
-correct value of the Current Source"
+margin_left = 42.17
+margin_top = 31.0658
+margin_right = 320.17
+margin_bottom = 79.0658
+rect_scale = Vector2( 0.7, 0.7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WarningLabel" type="Label" parent="." index="4"]
-margin_left = 120.0
-margin_top = 156.0
-margin_right = 160.0
-margin_bottom = 170.0
+margin_left = 236.458
+margin_top = 111.894
+margin_right = 276.458
+margin_bottom = 125.894
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Submit" type="Button" parent="." index="5"]
-margin_left = 49.606
-margin_top = 152.74
-margin_right = 106.606
-margin_bottom = 172.74
+[node name="Sprite" type="Sprite" parent="." index="5"]
+position = Vector2( 122.179, 114.112 )
+scale = Vector2( 0.27654, 0.27654 )
+texture = ExtResource( 3 )
+
+[node name="Submit" type="Button" parent="." index="6"]
+margin_left = 234.283
+margin_top = 136.959
+margin_right = 291.283
+margin_bottom = 156.959
 text = "Submit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Resistor1" type="Label" parent="." index="6"]
-margin_left = 127.428
-margin_top = 89.2422
-margin_right = 147.428
-margin_bottom = 105.242
+[node name="Resistor1" type="Label" parent="." index="7"]
+margin_left = 95.9944
+margin_top = 107.524
+margin_right = 115.994
+margin_bottom = 123.524
+rect_scale = Vector2( 0.7, 0.7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Res1Up" type="Button" parent="Resistor1" index="0"]
-margin_left = 3.09375
+margin_left = -15.9063
 margin_top = -25.224
-margin_right = 31.0938
+margin_right = 12.0938
 margin_bottom = -3.22398
 icon = ExtResource( 4 )
 flat = true
@@ -68,26 +74,27 @@ __meta__ = {
 }
 
 [node name="Res1Down" type="Button" parent="Resistor1" index="1"]
-margin_left = 4.7182
+margin_left = -14.2818
 margin_top = 14.6099
-margin_right = 32.7182
+margin_right = 13.7182
 margin_bottom = 36.6099
 icon = ExtResource( 5 )
 flat = true
 
-[node name="Resistor2" type="Label" parent="." index="7"]
-margin_left = 226.017
-margin_top = 89.2422
-margin_right = 246.017
-margin_bottom = 105.242
+[node name="Resistor2" type="Label" parent="." index="8"]
+margin_left = 165.787
+margin_top = 106.644
+margin_right = 185.787
+margin_bottom = 122.644
+rect_scale = Vector2( 0.7, 0.7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Res2Up" type="Button" parent="Resistor2" index="0"]
-margin_left = 3.09375
+margin_left = -15.9063
 margin_top = -25.224
-margin_right = 31.0938
+margin_right = 12.0938
 margin_bottom = -3.22398
 icon = ExtResource( 4 )
 flat = true
@@ -96,18 +103,21 @@ __meta__ = {
 }
 
 [node name="Res2Down" type="Button" parent="Resistor2" index="1"]
-margin_left = 4.7182
+margin_left = -14.2818
 margin_top = 14.6099
-margin_right = 32.7182
+margin_right = 13.7182
 margin_bottom = 36.6099
 icon = ExtResource( 5 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CurrentValue" type="Label" parent="." index="8"]
-margin_left = 19.7078
-margin_top = 86.5187
-margin_right = 44.7078
-margin_bottom = 111.519
+[node name="CurrentValue" type="Label" parent="." index="9"]
+margin_left = 242.24
+margin_top = 82.7216
+margin_right = 267.24
+margin_bottom = 96.7216
 __meta__ = {
 "_edit_use_anchors_": false
 }

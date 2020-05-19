@@ -35,7 +35,7 @@ new_level_path = "res://Levels/SS02_CH01.tscn"
 
 [node name="PowerController" parent="." index="4"]
 script = ExtResource( 3 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/Power/PowerPuzzleTwo.tscn"
 
 [node name="SideDoorPanel" parent="EntranceDoor" index="4"]
 interactable = false

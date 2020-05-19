@@ -9,16 +9,16 @@
 script = ExtResource( 2 )
 
 [node name="EngineControlOne" parent="." index="3"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/Power/PowerQuestions.tscn"
 
 [node name="EngineControlTwo" parent="." index="4"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/Power/PowerPuzzle.tscn"
 
 [node name="EngineControlThree" parent="." index="5"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/Power/PowerQuestions.tscn"
 
 [node name="EngineControlFour" parent="." index="6"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/PowerCircuit/PowerCircuit.tscn"
 
 [node name="SS02_Waypoint" parent="." index="7" instance=ExtResource( 3 )]
 position = Vector2( 264, 263 )

@@ -17,9 +17,13 @@ extents = Vector2( 25, 12 )
 [node name="WTR_CH03" instance=ExtResource( 2 )]
 script = ExtResource( 5 )
 
+[node name="WDS_01" parent="WeaponDockingStations" index="0"]
+position = Vector2( 104.365, 45.9772 )
+puzzlePath = "res://Resources/Puzzles/Chapter III/SeriesParallel/Series.tscn"
+
 [node name="Workbench" parent="." index="3" instance=ExtResource( 1 )]
 position = Vector2( 50, 43 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter III/SeriesParallel/Parallel.tscn"
 
 [node name="SS_CH03" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 29, 279 )

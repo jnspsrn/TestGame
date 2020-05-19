@@ -4,8 +4,11 @@ var ResNodes = []
 var CurrentNodes = []
 var In = false
 var Rn = false
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	pass
 
 
@@ -32,6 +35,7 @@ func _on_Submit_pressed():
 			$Wire2.add_point(Vector2($CircuitNode2.position))
 			$Wire2.add_point(Vector2($CircuitNode4.position))
 			$InstructionLabel.text = "You Are Correct!"
+			puzzleObject.update_puzzle(true)
 	elif ResNodes.has("CircuitNode3") and ResNodes.has("CircuitNode4"):
 		if CurrentNodes.has("CircuitNode") and CurrentNodes.has("CircuitNode2"):
 			$Wire1.add_point(Vector2($CircuitNode.position))
@@ -39,6 +43,7 @@ func _on_Submit_pressed():
 			$Wire2.add_point(Vector2($CircuitNode2.position))
 			$Wire2.add_point(Vector2($CircuitNode4.position))
 			$InstructionLabel.text = "You Are Correct!"
+			puzzleObject.update_puzzle(true)
 	elif ResNodes.has("CircuitNode") and ResNodes.has("CircuitNode3"):
 		if CurrentNodes.has("CircuitNode2") and CurrentNodes.has("CircuitNode4"):
 			$Wire1.add_point(Vector2($CircuitNode.position))
@@ -46,6 +51,7 @@ func _on_Submit_pressed():
 			$Wire2.add_point(Vector2($CircuitNode3.position))
 			$Wire2.add_point(Vector2($CircuitNode4.position))
 			$InstructionLabel.text = "You Are Correct!"
+			puzzleObject.update_puzzle(true)
 	elif ResNodes.has("CircuitNode2") and ResNodes.has("CircuitNode4"):
 		if CurrentNodes.has("CircuitNode") and CurrentNodes.has("CircuitNode3"):
 			$Wire1.add_point(Vector2($CircuitNode.position))
@@ -53,26 +59,19 @@ func _on_Submit_pressed():
 			$Wire2.add_point(Vector2($CircuitNode3.position))
 			$Wire2.add_point(Vector2($CircuitNode4.position))
 			$InstructionLabel.text = "You Are Correct!"
+			puzzleObject.update_puzzle(true)
 	else:
 		$InstructionLabel.text = "Try Again!"
-
-
 
 func _on_In_text_entered(new_text):
 	if new_text == "4":
 		$CurrentSource/Label.text = "4"
 		In = true
 
-
 func _on_Rn_text_entered(new_text):
 	if new_text == "8":
 		$Resistor/Label.text = "8"
 		Rn = true
-
-
-
-
-
 
 func _on_Button1_pressed():
 	if Rn == true:

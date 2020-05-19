@@ -11,9 +11,11 @@ var WarningLabelCorrect = "You Are Correct!"
 var Counter = 0.01
 var x = 0
 var y = 0
+var puzzleObject
 
 func _ready():
 	$InstructionLabel/SubatomicParticles.grab_focus()
+	puzzleObject = get_parent()
 	while [x < 31]:
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionOne[x]
@@ -70,6 +72,7 @@ func _on_Electrons_text_entered(new_text):
 func _on_Protons_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "protons" or new_text == "Protons":
+		puzzleObject.update_puzzle(true)
 		$InstructionLabel2/Protons.visible = false
 		while [y < 16]:
 			yield(get_tree().create_timer(Counter), "timeout")

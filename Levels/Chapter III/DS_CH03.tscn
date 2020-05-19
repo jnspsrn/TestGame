@@ -9,13 +9,13 @@
 script = ExtResource( 4 )
 
 [node name="SJ_01" parent="." index="2"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter III/VoltMeter/VoltMeter.tscn"
 
 [node name="SJ_02" parent="." index="3"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter III/Ammeter/Ammeter.tscn"
 
 [node name="SJ_03" parent="." index="4"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter III/VoltMeter/VoltMeter.tscn"
 
 [node name="SS02_CH03" parent="." index="5" instance=ExtResource( 3 )]
 position = Vector2( 312, 61 )

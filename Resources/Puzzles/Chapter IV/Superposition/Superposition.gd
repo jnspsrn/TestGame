@@ -2,8 +2,11 @@ extends Puzzle
 
 var CurrentOff = false
 var VoltageOff = false
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	pass
 
 func _on_CurrentOff_pressed():
@@ -38,6 +41,7 @@ func _on_Vo2_text_entered(new_text):
 		$WarningLabel.text = "Try Again!"
 func _on_Vo_text_entered(new_text):
 	if new_text == "24":
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
 	else:
 		$WarningLabel.text = "Try Again!"

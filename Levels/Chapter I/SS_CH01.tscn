@@ -11,10 +11,11 @@
 script = ExtResource( 3 )
 
 [node name="SideDoorPanel" parent="Doors/ReactorRoomDoor" index="4"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElementOne.tscn"
 
 [node name="SideDoorPanel" parent="Doors/ArmoryDoor" index="4"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+position = Vector2( 1.55986, -43 )
+puzzlePath = "res://Resources/Puzzles/Chapter I/BasicCircuitElement/CircuitElementQuestionsTwo.tscn"
 
 [node name="CrewQuartersDoor" parent="Doors" index="2"]
 position = Vector2( 103, -218 )
@@ -23,10 +24,10 @@ position = Vector2( 103, -218 )
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
 
 [node name="SideDoorPanel" parent="Doors/ResearchLabDoor" index="4"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/ChargeVoltageCurrentQuestions/CurrentQuestions.tscn"
 
 [node name="SideDoorPanel" parent="Doors/WeaponsTechDoor" index="4"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/ChargeVoltageCurrentQuestions/VoltageQuestions.tscn"
 
 [node name="SideDoorPanel" parent="Doors/CommandCenterDoor" index="4"]
 interactable = false

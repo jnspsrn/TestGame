@@ -10,9 +10,30 @@
 script = ExtResource( 3 )
 
 [node name="BrokenCore" parent="." index="3" instance=ExtResource( 2 )]
-position = Vector2( 197, 147 )
+position = Vector2( 154.906, 117.739 )
+puzzlePath = "res://Resources/Puzzles/Chapter V/Inductor/InductorCircuit.tscn"
 
-[node name="Researcher" parent="." index="4" instance=ExtResource( 5 )]
+[node name="BrokenCore2" parent="." index="4" instance=ExtResource( 2 )]
+position = Vector2( 241.661, 117.739 )
+puzzlePath = "res://Resources/Puzzles/Chapter V/Inductor/InductorQuestions.tscn"
+
+[node name="BrokenCore3" parent="." index="5" instance=ExtResource( 2 )]
+position = Vector2( 242.174, 168.56 )
+puzzlePath = "res://Resources/Puzzles/Chapter V/Conductor/ConductorQuestions.tscn"
+
+[node name="BrokenCore4" parent="." index="6" instance=ExtResource( 2 )]
+position = Vector2( 152.853, 169.074 )
+puzzlePath = "res://Resources/Puzzles/Chapter V/Conductor/ConductorCircuit.tscn"
+
+[node name="BrokenCore5" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 233.447, 212.708 )
+puzzlePath = "res://Resources/Puzzles/Chapter V/ConductorInductor/ConductorEquivalent.tscn"
+
+[node name="BrokenCore6" parent="." index="8" instance=ExtResource( 2 )]
+position = Vector2( 144.639, 214.761 )
+puzzlePath = "res://Resources/Puzzles/Chapter V/ConductorInductor/InductorEquivalent.tscn"
+
+[node name="Researcher" parent="." index="9" instance=ExtResource( 5 )]
 position = Vector2( 80, 174 )
 script = ExtResource( 4 )
 

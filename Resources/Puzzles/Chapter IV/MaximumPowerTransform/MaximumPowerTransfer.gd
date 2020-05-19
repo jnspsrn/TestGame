@@ -2,12 +2,15 @@ extends Puzzle
 
 var Vth = false
 var Rth = false
+var puzzleObject
 
 func _ready():
+	var puzzleObject
 	pass
 
 func _checker():
 	if Rth == true and Vth == true:
+		puzzleObject = get_parent()
 		$Pmax.visible = true
 		$Sprite.visible = false
 		$Sprite2.visible = true

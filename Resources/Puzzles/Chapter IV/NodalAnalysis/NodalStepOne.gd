@@ -1,17 +1,15 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
 var checker
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	$NodeVoltages.visible = false
 	$Submit.visible = false
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
+
 
 func _on_Ground_area_entered(area):
 	if area is NodalCircuit:
@@ -30,8 +28,7 @@ func _on_V2_text_entered(new_text):
 		
 func _on_Submit_pressed():
 	if checker == "12" or checker == "21":
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
-		solved = true
-		doorPanel.update_puzzle(solved)
 	else:
 		$WarningLabel.text = "Try Again!"

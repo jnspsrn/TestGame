@@ -3,9 +3,11 @@ extends Puzzle
 var ElectricCharge = false
 var Voltage = false
 var Zero = false
+var puzzleObject
+ 
 
 func _ready():
-	pass
+	puzzleObject = get_parent()
 
 
 func _on_ElectricCharge_text_entered(new_text):
@@ -19,6 +21,7 @@ func _on_Zero_text_entered(new_text):
 		Zero = true
 func _on_Submit_pressed():
 	if Zero == true and Voltage == true and ElectricCharge == true:
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
 	else:
 		$WarningLabel.text = "Try Again!"

@@ -1,19 +1,28 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
 var Resistor1Value = 0
 var Resistor2Value = 0
 var CurrentValue
+var InstructionLabel = "Adjust the value of the Resistors to\nget the correct value of the Current\nSource"
+var x = 0
+var y = 0
+var Counter = 0
+var WarningLabelWrong = "Error!"
+var WarningLabelCorrect = "Correct!"
+var Parallel = 0
+var puzzleObject
 
 
 func _ready():
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
-
+	puzzleObject = get_parent()
+	while [x < 80]:
+		yield(get_tree().create_timer(Counter), "timeout")
+		$InstructionLabel.text += InstructionLabel[x]
+		x += 1
+		if x == 80:
+			x = 0
+			break
 func _get_current():
 	var Req = (Resistor1Value+Resistor2Value)/Resistor1Value
 	CurrentValue = float(Req)*8
@@ -39,9 +48,21 @@ func _on_Res2Down_pressed():
 
 
 func _on_Submit_pressed():
+	$WarningLabel.text = ""
 	if CurrentValue == 10:
-		$WarningLabel.text = "You Are Correct!"
-		solved = true
-		doorPanel.update_puzzle(solved)
+		puzzleObject.update_puzzle(true)
+		while [y < 8]:
+			yield(get_tree().create_timer(Counter), "timeout")
+			$WarningLabel.text += WarningLabelCorrect[y]
+			y += 1
+			if y == 8:
+				y = 0
+				break
 	else:
-		$WarningLabel.text = "Try Again!"
+		while [y < 6]:
+			yield(get_tree().create_timer(Counter), "timeout")
+			$WarningLabel.text += WarningLabelWrong[y]
+			y += 1
+			if y == 6:
+				y = 0
+				break

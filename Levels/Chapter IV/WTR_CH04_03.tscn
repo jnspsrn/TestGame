@@ -11,7 +11,7 @@ script = ExtResource( 2 )
 
 [node name="Workbench" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 78, 52 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter IV/Superposition/Superposition.tscn"
 
 [node name="WT_CH04_03" parent="." index="4" instance=ExtResource( 4 )]
 position = Vector2( 112, 272 )

@@ -10,9 +10,11 @@ var Counter = 0.01
 var Series = false
 var WarningLabelWrong = "Error!"
 var WarningLabelCorrect = "Correct!"
+var puzzleObject
 
 
 func _ready():
+	puzzleObject = get_parent()
 	while [x < 27]:
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionOne[x]
@@ -96,6 +98,7 @@ func _Req():
 func _on_Req_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "12":
+		puzzleObject.update_puzzle(true)
 		while [y < 8]:
 			yield(get_tree().create_timer(Counter), "timeout")
 			$WarningLabel.text += WarningLabelCorrect[y]

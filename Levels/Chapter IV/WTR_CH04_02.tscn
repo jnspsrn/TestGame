@@ -11,8 +11,13 @@ script = ExtResource( 5 )
 
 [node name="Workbench" parent="." index="3" instance=ExtResource( 3 )]
 position = Vector2( 65, 46 )
+puzzlePath = "res://Resources/Puzzles/Chapter IV/SourceTransformation/VoltageToCurrent.tscn"
 
-[node name="WT_CH04_02" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Workbench2" parent="." index="4" instance=ExtResource( 3 )]
+position = Vector2( 131.481, 46 )
+puzzlePath = "res://Resources/Puzzles/Chapter IV/SourceTransformation/CurrentToVoltage.tscn"
+
+[node name="WT_CH04_02" parent="." index="5" instance=ExtResource( 4 )]
 position = Vector2( 111, 263 )
 script = ExtResource( 2 )
 

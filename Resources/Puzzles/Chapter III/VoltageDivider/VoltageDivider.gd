@@ -1,7 +1,6 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
 var VoltageValue = 0
 var InstructionLabel = "Get the voltage Around Vo."
 var x = 0
@@ -9,13 +8,11 @@ var y = 0
 var Counter = 0
 var WarningLabelWrong = "Error!"
 var WarningLabelCorrect = "Correct!"
+var puzzleObject
+ 
 
 func _ready():
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
+	puzzleObject = get_parent()
 	while [x < 26]:
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionLabel[x]
@@ -35,9 +32,24 @@ func _on_VoltageDown_pressed():
 
 
 func _on_Submit_pressed():
-	if VoltageValue == 20:
-		$WarningLabel.text = "You are Correct!"
+	$WarningLabel.text = ""
+	if VoltageValue == 80:
+		puzzleObject.update_puzzle(true)
+		while [y < 8]:
+			yield(get_tree().create_timer(Counter), "timeout")
+			$WarningLabel.text += WarningLabelCorrect[y]
+			y += 1
+			if y == 8:
+				y = 0
+				break
 		solved = true
 		doorPanel.update_puzzle(solved)
 	else:
-		$WarningLabel.text = "Try Again!"
+		while [y < 6]:
+			yield(get_tree().create_timer(Counter), "timeout")
+			$WarningLabel.text += WarningLabelWrong[y]
+			y += 1
+			if y == 6:
+				y = 0
+				break
+

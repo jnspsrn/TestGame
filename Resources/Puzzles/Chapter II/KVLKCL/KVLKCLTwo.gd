@@ -8,10 +8,12 @@ var WarningLabelCorrect = "Correct!"
 var x = 0
 var y = 0
 var Counter = 0.01
-
+var puzzleObject
+ 
 
 func _ready():
 	while [x < 23]:
+		puzzleObject = get_parent()
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionLabel[x]
 		x += 1
@@ -56,6 +58,7 @@ func _on_Voltage_text_entered(new_text):
 	if new_text == "Voltage" or new_text == "voltages" or new_text == "voltage" or new_text == "Voltages":
 		$InstructionTwo.text = "Kirchhoffs voltage law is the algebraic sum\nof all the voltages around any closed path\nin a circuit equals zero."
 		$InstructionTwo/Voltage.visible = false
+		puzzleObject.update_puzzle(true)
 		while [x < 8]:
 			yield(get_tree().create_timer(Counter), "timeout")
 			$WarningLabel.text += WarningLabelCorrect[x]

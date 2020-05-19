@@ -1,0 +1,159 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Puzzles/Puzzle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Puzzles/Chapter III/CurrentDivder/CurrentDividerTwo.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Objects/PuzzleGraphics/HubUi.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Objects/Circuit/CurrentDividerTwo.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Objects/Circuit/plus.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Objects/Circuit/minus.png" type="Texture" id=6]
+
+[node name="CurrentDividerTwo" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." index="0"]
+color = Color( 0.447059, 0.447059, 0.447059, 1 )
+
+[node name="Sprite2" type="Sprite" parent="." index="2"]
+position = Vector2( 165.451, 89.729 )
+scale = Vector2( 0.456, 0.456 )
+texture = ExtResource( 3 )
+
+[node name="Circuit" type="Sprite" parent="." index="3"]
+position = Vector2( 117.067, 109.503 )
+scale = Vector2( 0.280449, 0.280449 )
+texture = ExtResource( 4 )
+
+[node name="ResOne" type="Button" parent="Circuit" index="0"]
+margin_left = 43.0
+margin_top = 18.0
+margin_right = 112.0
+margin_bottom = 142.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResTwo" type="Button" parent="Circuit" index="1"]
+margin_left = 43.0
+margin_top = -151.538
+margin_right = 112.0
+margin_bottom = -27.5375
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResThree" type="Button" parent="Circuit" index="2"]
+visible = false
+margin_left = 43.0
+margin_top = -58.6956
+margin_right = 112.0
+margin_bottom = 65.3044
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResFour" type="Button" parent="Circuit" index="3"]
+visible = false
+margin_left = 215.229
+margin_top = -58.6956
+margin_right = 284.229
+margin_bottom = 65.3044
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResFive" type="Button" parent="Circuit" index="4"]
+visible = false
+margin_left = 43.0
+margin_top = -58.6956
+margin_right = 112.0
+margin_bottom = 65.3044
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResSix" type="Button" parent="Circuit" index="5"]
+visible = false
+margin_left = -141.0
+margin_top = -214.0
+margin_right = -17.0
+margin_bottom = -137.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLabel" type="Label" parent="." index="4"]
+margin_left = 45.2632
+margin_top = 31.5789
+margin_right = 85.2632
+margin_bottom = 45.5789
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentValue" type="Label" parent="." index="5"]
+visible = false
+margin_left = 248.387
+margin_top = 82.5602
+margin_right = 288.387
+margin_bottom = 96.5602
+text = "Ia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plus" type="Button" parent="CurrentValue" index="0"]
+margin_left = -28.6625
+margin_top = -5.15382
+margin_right = -0.662491
+margin_bottom = 16.8462
+icon = ExtResource( 5 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minus" type="Button" parent="CurrentValue" index="1"]
+margin_left = 30.4545
+margin_top = -5.74767
+margin_right = 58.4545
+margin_bottom = 16.2523
+icon = ExtResource( 6 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WarningLabel" type="Label" parent="." index="6"]
+margin_left = 237.203
+margin_top = 111.473
+margin_right = 277.203
+margin_bottom = 125.473
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="." index="7"]
+margin_left = 234.395
+margin_top = 135.985
+margin_right = 291.395
+margin_bottom = 155.985
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Circuit/ResOne" to="." method="_on_ResOne_pressed"]
+[connection signal="pressed" from="Circuit/ResTwo" to="." method="_on_ResTwo_pressed"]
+[connection signal="pressed" from="Circuit/ResThree" to="." method="_on_ResThree_pressed"]
+[connection signal="pressed" from="Circuit/ResFour" to="." method="_on_ResFour_pressed"]
+[connection signal="pressed" from="Circuit/ResFive" to="." method="_on_ResFive_pressed"]
+[connection signal="pressed" from="Circuit/ResSix" to="." method="_on_ResSix_pressed"]
+[connection signal="pressed" from="CurrentValue/Plus" to="." method="_on_Plus_pressed"]
+[connection signal="pressed" from="CurrentValue/Minus" to="." method="_on_Minus_pressed"]
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]

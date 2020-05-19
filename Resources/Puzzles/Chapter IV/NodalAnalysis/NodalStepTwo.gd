@@ -1,22 +1,20 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
 var NodeV1 = false
 var NodeV2 = false
 var V1 = false
 var V2 = false
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	$Submit.visible = false
 	$V1.visible = false
 	$V2.visible = false
 	_add_items()
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
+
 
 func _add_items():
 	$Equation/NodeV1.add_item("")
@@ -56,8 +54,7 @@ func _on_V2Answer_text_entered(new_text):
 
 func _on_Submit_pressed():
 	if V1 == true and V2 == true:
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
-		solved = true
-		doorPanel.update_puzzle(solved)
 	else:
 		$WarningLabel.text = "Try Again!"

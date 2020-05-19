@@ -1,7 +1,7 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
+
 var checker = 0
 var InstructionOne = "Identify which Resistors are in Series."
 var InstructionTwo = "Identify which Resistors are in Parallel."
@@ -10,15 +10,12 @@ var y = 0
 var Counter = 0.01
 var WarningLabelWrong = "Error!"
 var WarningLabelCorrect = "Correct!"
-
+var puzzleObject
+ 
 
 func _ready():
 	$Series/Series1.grab_focus()
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
+	puzzleObject = get_parent()
 	while [x < 39]:
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionOne[x]
@@ -76,6 +73,7 @@ func _on_Parallel1_text_entered(new_text):
 func _on_Parallel2_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "R3" or new_text == "R4":
+		puzzleObject.update_puzzle(true)
 		while [y < 8]:
 			yield(get_tree().create_timer(Counter), "timeout")
 			$WarningLabel.text += WarningLabelCorrect[y]

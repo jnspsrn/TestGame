@@ -17,25 +17,25 @@ extents = Vector2( 25, 12 )
 script = ExtResource( 4 )
 
 [node name="WDS_01" parent="WeaponDockingStations" index="0"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/KCLKCL/KCLCircuit.tscn"
 
 [node name="WDS_02" parent="WeaponDockingStations" index="1"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/KCLKCL/KVLCircuit.tscn"
 
 [node name="WDS_03" parent="WeaponDockingStations" index="2"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/KCLKCL/FillBlank(KCLKVL).tscn"
 
 [node name="WDS_04" parent="WeaponDockingStations" index="3"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/KVLKCL/KVLKCLOne.tscn"
 
 [node name="WDS_05" parent="WeaponDockingStations" index="4"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/KVLKCL/KVLKCLTwo.tscn"
 
 [node name="WDS_06" parent="WeaponDockingStations" index="5"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/KVLKCL/KVLKCLThree.tscn"
 
 [node name="WDS_07" parent="WeaponDockingStations" index="6"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/KVLKCL/WeaponPuzzles.tscn"
 
 [node name="WDS_08" parent="WeaponDockingStations" index="7"]
 puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"

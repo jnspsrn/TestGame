@@ -9,10 +9,28 @@
 [node name="A_CH04" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="SDS_01" parent="SuitDockingStations" index="0"]
+position = Vector2( 35.4001, 41.409 )
+
+[node name="SDS_02" parent="SuitDockingStations" index="1"]
+position = Vector2( 75.1292, 41.409 )
+
+[node name="SDS_03" parent="SuitDockingStations" index="2"]
+position = Vector2( 112.656, 40.864 )
+
+[node name="SDS_04" parent="SuitDockingStations" index="3"]
+position = Vector2( 268.564, 42.9783 )
+puzzlePath = "res://Resources/Puzzles/Chapter IV/Thevenin/TheveninStepTwo.tscn"
+
 [node name="Workbench" parent="." index="3" instance=ExtResource( 5 )]
 position = Vector2( 319, 47 )
+puzzlePath = "res://Resources/Puzzles/Chapter IV/Thevenin/TheveninStepOne.tscn"
 
-[node name="Armorer_ch04" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Workbench2" parent="." index="4" instance=ExtResource( 5 )]
+position = Vector2( 217.907, 50.2264 )
+puzzlePath = "res://Resources/Puzzles/Chapter IV/Norton/NortonStepOne.tscn"
+
+[node name="Armorer_ch04" parent="." index="5" instance=ExtResource( 4 )]
 position = Vector2( 319, 190 )
 script = ExtResource( 2 )
 

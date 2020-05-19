@@ -1,8 +1,11 @@
 extends Puzzle
 
 var Counter = 0 
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	pass
 
 
@@ -14,6 +17,7 @@ func _on_NodalButton_pressed():
 		Counter += 1
 	elif Counter == 3:
 		$WarningLabel.text = "You Are Correct!"
+		puzzleObject.update_puzzle(true)
 		Counter += 1
 	else:
 		$WarningLabel.text = "Try Again!"

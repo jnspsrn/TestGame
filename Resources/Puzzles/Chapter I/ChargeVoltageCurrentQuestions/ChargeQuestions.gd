@@ -9,10 +9,10 @@ var WarningLabelCorrect = "You Are Correct!"
 var Counter = 0.01
 var x = 0
 var y = 0
-var doorPanel
+var puzzleObject
 
 func _ready():
-	doorPanel = get_parent()
+	puzzleObject = get_parent()
 	$InstructionLabel1/Bipolar.grab_focus()
 	while [x < 61]:
 		yield(get_tree().create_timer(Counter), "timeout")
@@ -48,7 +48,6 @@ func _on_Voltage_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "voltage" or new_text == "current":
 		Voltage = true
-		doorPanel.update_puzzle(true)
 		$InstructionLabel2/Current.grab_focus()
 		$InstructionLabel2/Voltage.visible = false
 		$WarningLabel.text = ""
@@ -63,6 +62,7 @@ func _on_Voltage_text_entered(new_text):
 func _on_Current_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "voltage" or new_text == "current":
+		puzzleObject.update_puzzle(true)
 		Current = true
 		$InstructionLabel2/Current.visible = false
 		if Voltage == true and Current == true:

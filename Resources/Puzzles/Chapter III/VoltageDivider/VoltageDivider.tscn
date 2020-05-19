@@ -38,9 +38,9 @@ __meta__ = {
 }
 
 [node name="VoltageValue" type="Label" parent="." index="5"]
-margin_left = 249.446
+margin_left = 247.287
 margin_top = 83.3718
-margin_right = 276.446
+margin_right = 274.287
 margin_bottom = 97.3718
 text = "Vo"
 __meta__ = {

@@ -2,8 +2,11 @@ extends Puzzle
 
 var ResNodes = []
 var VoltageNodes = []
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	pass
 
 
@@ -27,24 +30,28 @@ func _on_Submit_pressed():
 		$Wire1.add_point(Vector2($CircuitNode4.position))
 		$Wire2.add_point(Vector2($CircuitNode2.position))
 		$Wire2.add_point(Vector2($CircuitNode4.position))
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
 	elif ResNodes.has("CircuitNode2") and VoltageNodes.has("CircuitNode2"):
 		$Wire1.add_point(Vector2($CircuitNode.position))
 		$Wire1.add_point(Vector2($CircuitNode3.position))
 		$Wire2.add_point(Vector2($CircuitNode3.position))
 		$Wire2.add_point(Vector2($CircuitNode4.position))
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
 	elif ResNodes.has("CircuitNode3") and VoltageNodes.has("CircuitNode3"):
 		$Wire1.add_point(Vector2($CircuitNode.position))
 		$Wire1.add_point(Vector2($CircuitNode2.position))
 		$Wire2.add_point(Vector2($CircuitNode2.position))
 		$Wire2.add_point(Vector2($CircuitNode4.position))
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
 	elif ResNodes.has("CircuitNode4") and VoltageNodes.has("CircuitNode4"):
 		$Wire1.add_point(Vector2($CircuitNode.position))
 		$Wire1.add_point(Vector2($CircuitNode2.position))
 		$Wire2.add_point(Vector2($CircuitNode.position))
 		$Wire2.add_point(Vector2($CircuitNode3.position))
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You are Correct!"
 	else:
 		$WarningLabel.text = "Try Again!"

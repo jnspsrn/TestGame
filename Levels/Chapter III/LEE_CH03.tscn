@@ -13,13 +13,9 @@ extents = Vector2( 8, 3 )
 [node name="LEE_CH03" instance=ExtResource( 1 )]
 script = ExtResource( 6 )
 
-[node name="DoorPanel" parent="." index="2" groups=[
-"InteractableObject",
-]]
-collision_layer = 0
-collision_mask = 2
+[node name="DoorPanel" parent="." index="2"]
 script = ExtResource( 5 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter III/WyeDelta/DeltaToWye.tscn"
 
 [node name="Sprite" type="Sprite" parent="DoorPanel" index="0"]
 texture = ExtResource( 4 )

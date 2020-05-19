@@ -6,8 +6,11 @@ var MeshC = false
 var ia = false
 var ib = false
 var ic = false
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	$Currents.visible = false
 	pass
 
@@ -43,6 +46,7 @@ func _on_Ic_text_entered(new_text):
 
 func _on_Submit_pressed():
 	if ia == true and ib == true and ic == true:
+		puzzleObject.update_puzzle(true)
 		$Currents/WarningLabel.text = "Correct!"
 	else:
 		$Currents/WarningLabel.text = "Try Again!"

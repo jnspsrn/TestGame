@@ -19,7 +19,7 @@ script = ExtResource( 5 )
 
 [node name="CoreMachine" parent="." index="3" instance=ExtResource( 2 )]
 position = Vector2( 193, 122 )
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter III/WyeDelta/WyeToDelta.tscn"
 
 [node name="SS_CH03" parent="." index="4" instance=ExtResource( 3 )]
 position = Vector2( 28, 183 )

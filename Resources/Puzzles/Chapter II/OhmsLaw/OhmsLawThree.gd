@@ -1,21 +1,17 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
 var InstructionLabel = "Calculate Ra."
 var WarningLabelWrong = "Error!"
 var WarningLabelCorrect = "Correct!"
 var y = 0
 var x = 0
 var Counter = 0.01
-
+var puzzleObject
+ 
 func _ready():
 	$ResistorA.grab_focus()
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
+	puzzleObject = get_parent()
 	while [x < 13]:
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionLabel[x]
@@ -26,6 +22,7 @@ func _ready():
 func _on_ResistorA_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "5":
+		puzzleObject.update_puzzle(true)
 		while [y < 8]:
 			yield(get_tree().create_timer(Counter), "timeout")
 			$WarningLabel.text += WarningLabelCorrect[y]

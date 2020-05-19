@@ -1,7 +1,7 @@
 extends CircuitElementPuzzle
 
 export (bool) var solved
-var doorPanel
+var puzzleObject
 
 var PolarityLabel = "P = -iv"
 var WarningLabelWrong = "Error, Try Again!"
@@ -9,8 +9,8 @@ var WarningLabelCorrect = "You Are Correct!"
 var y = 0
 
 func _ready():
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
+	puzzleObject = get_parent()
+	if puzzleObject.puzzle_solved:
 		solved = true
 		$WarningLabel.visible = true
 		$WarningLabel.text = "Already solved!"
@@ -44,4 +44,4 @@ func _on_Arrow2_pressed():
 			y = 0
 			break
 	solved = true
-	doorPanel.update_puzzle(solved)
+	puzzleObject.update_puzzle(solved)

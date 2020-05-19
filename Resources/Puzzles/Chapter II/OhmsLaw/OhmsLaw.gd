@@ -10,14 +10,12 @@ var CurrentA = "-2"
 var y = 0
 var x = 0
 var Counter = 0.01
+var puzzleObject
+
 
 func _ready():
 	$VoltageA.grab_focus()
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
+	puzzleObject = get_parent()
 	while [x < 13]:
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionLabel[x]
@@ -30,6 +28,7 @@ func _ready():
 func _on_VoltageA_text_entered(new_text):
 	$WarningLabel.text = ""
 	if $VoltageA.text == VoltageA:
+		puzzleObject.update_puzzle(true)
 		while [y < 8]:
 			yield(get_tree().create_timer(Counter), "timeout")
 			$WarningLabel.text += WarningLabelCorrect[y]

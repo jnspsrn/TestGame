@@ -1,18 +1,19 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
 var InstructionLabel = "Calculate Power at the Resistor"
 var WarningLabelWrong = "Error!"
 var WarningLabelCorrect = "Correct!"
 var y = 0
 var x = 0
 var Counter = 0.01
+var puzzleObject
+ 
 
 func _ready():
 	$LineEdit.grab_focus()
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
+	puzzleObject = get_parent()
+	if puzzleObject.puzzle_solved:
 		solved = true
 		$WarningLabel.visible = true
 		$WarningLabel.text = "Already solved!"
@@ -28,7 +29,7 @@ func _on_LineEdit_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "24" or new_text == "24W":
 		solved = true
-		doorPanel.update_puzzle(solved)
+		puzzleObject.update_puzzle(true)
 		while [y < 8]:
 			yield(get_tree().create_timer(Counter), "timeout")
 			$WarningLabel.text += WarningLabelCorrect[y]

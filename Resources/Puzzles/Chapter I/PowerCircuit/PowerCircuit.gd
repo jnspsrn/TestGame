@@ -1,7 +1,6 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
 var checker = 0
 var AnswerA = "90"
 var AnswerB = "-210"
@@ -9,10 +8,11 @@ var AnswerC = "80"
 var AnswerD = "-200"
 var AnswerE = "600"
 var AnswerF = "-360"
-
+var puzzleObject
+ 
 func _ready():
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
+	puzzleObject = get_parent()
+	if puzzleObject.puzzle_solved:
 		solved = true
 		$WarningLabel.visible = true
 		$WarningLabel.text = "Already solved!"
@@ -22,7 +22,7 @@ func _count_correct():
 	if checker == 6:
 		$WarningLabel.text = "All Power Correct!"
 		solved = true
-		doorPanel.update_puzzle(solved)
+		puzzleObject.update_puzzle(solved)
 	else:
 		pass
 

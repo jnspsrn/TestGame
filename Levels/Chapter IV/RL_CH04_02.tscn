@@ -11,7 +11,7 @@
 script = ExtResource( 2 )
 
 [node name="RL_Workbench" parent="." index="2"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter IV/NodalVsMesh/NodalVsMeshQuestions.tscn"
 
 [node name="Waypoint" parent="." index="3" instance=ExtResource( 4 )]
 position = Vector2( 29, 183 )

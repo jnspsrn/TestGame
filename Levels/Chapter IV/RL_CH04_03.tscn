@@ -11,13 +11,15 @@
 script = ExtResource( 2 )
 
 [node name="RL_Workbench" parent="." index="2"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter IV/MaximumPowerTransform/MaximumPowerTransfer.tscn"
 
 [node name="R_CH04_03" parent="." index="3" instance=ExtResource( 4 )]
 position = Vector2( 116, 169 )
 script = ExtResource( 3 )
 
 [node name="SS_CH04_03" parent="." index="4" instance=ExtResource( 6 )]
+position = Vector2( 27.2879, 183.533 )
+rotation = 3.14159
 connection = ExtResource( 5 )
 new_level_path = "res://Levels/Chapter IV/SS_CH04_03.tscn"
 

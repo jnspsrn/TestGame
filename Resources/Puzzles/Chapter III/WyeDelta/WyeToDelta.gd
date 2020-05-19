@@ -1,15 +1,13 @@
 extends Puzzle
 
 export (bool) var solved
-var doorPanel
+
 var checker = 0
+var puzzleObject
+ 
 
 func _ready():
-	doorPanel = get_parent()
-	if doorPanel.puzzle_solved:
-		solved = true
-		$WarningLabel.visible = true
-		$WarningLabel.text = "Already solved!"
+	puzzleObject = get_parent()
 
 func _on_Submit_pressed():
 	if $ResistorA.ResistorANodes.has("CircuitNode2") and $ResistorA.ResistorANodes.has("CircuitNode3"): 
@@ -22,8 +20,8 @@ func _on_Submit_pressed():
 	
 func _checker():
 	if checker == 3:
+		puzzleObject.update_puzzle(true)
 		$WarningLabel.text = "You Are Correct!"
-		solved = true
-		doorPanel.update_puzzle(solved)
+
 	else:
 		$WarningLabel.text = "Try Again!"

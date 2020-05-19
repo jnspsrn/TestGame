@@ -9,9 +9,12 @@ var WarningLabelCorrect = "You Are Correct!"
 var Counter = 0.01
 var x = 0
 var y = 0
+var puzzleObject
+ 
 
 func _ready():
 	$InstructionLabel/Current.grab_focus()
+	puzzleObject = get_parent()
 	while [x < 61]:
 		yield(get_tree().create_timer(Counter), "timeout")
 		$InstructionLabel.text += InstructionOne[x]
@@ -60,6 +63,7 @@ func _on_Charge_text_entered(new_text):
 func _on_Time_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "time" or new_text == "Time":
+		puzzleObject.update_puzzle(true)
 		$InstructionLabel2/Time.visible = false
 		Time = true
 		$WarningLabel.text = ""

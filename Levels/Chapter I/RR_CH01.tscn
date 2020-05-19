@@ -13,16 +13,16 @@ script = ExtResource( 2 )
 puzzle_solved = true
 
 [node name="ControlPanelOne" parent="ControlPanels" index="0"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElementFive.tscn"
 
 [node name="ControlPanelTwo" parent="ControlPanels" index="1"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElementFour.tscn"
 
 [node name="ControlPanelThree" parent="ControlPanels" index="2"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElementThree.tscn"
 
 [node name="ControlPanelFour" parent="ControlPanels" index="3"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter I/BasicCircuitElement/BasicCircuitElementTwo.tscn"
 
 [node name="SS_Waypoint" parent="." index="4" instance=ExtResource( 5 )]
 position = Vector2( 311, 10 )

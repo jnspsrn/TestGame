@@ -2,8 +2,11 @@ extends Puzzle
 
 var Valid = false
 var Invalid = false
+var puzzleObject
+
 
 func _ready():
+	puzzleObject = get_parent()
 	pass
 
 
@@ -18,5 +21,6 @@ func _on_Valid_text_entered(new_text):
 func _on_Submit_pressed():
 	if Valid == true and Invalid == true:
 		$WarningLabel.text = "You Are Correct!"
+		puzzleObject.update_puzzle(true)
 	else:
 		$WarningLabel.text = "Try Again!"

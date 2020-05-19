@@ -23,7 +23,7 @@ connection = ExtResource( 3 )
 new_level_path = "res://Levels/Chapter II/SS_CH02.tscn"
 
 [node name="RL_Workbench" parent="." index="3"]
-puzzlePath = "res://Resources/Puzzles/ResistorPuzzleOne.tscn"
+puzzlePath = "res://Resources/Puzzles/Chapter II/DependentSource/DependentSource.tscn"
 
 [node name="Researcher" type="StaticBody2D" parent="." index="4" groups=[
 "InteractableObject",

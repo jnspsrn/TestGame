@@ -10,8 +10,10 @@ var WarningLabelCorrect = "You Are Correct!"
 var Counter = 0.01
 var x = 0
 var y = 0
+var puzzleObject
 
 func _ready():
+	puzzleObject = get_parent()
 	$InstructionLabel/Two.grab_focus()
 	while [x < 54]:
 		yield(get_tree().create_timer(Counter), "timeout")
@@ -64,6 +66,7 @@ func _on_Voltage_text_entered(new_text):
 	$WarningLabel.text = ""
 	if new_text == "voltage" or new_text == "current":
 		$InstructionLabel2/Voltage.visible = false
+		puzzleObject.update_puzzle(true)
 		while [y < 16]:
 			yield(get_tree().create_timer(Counter), "timeout")
 			$WarningLabel.text += WarningLabelCorrect[y]
